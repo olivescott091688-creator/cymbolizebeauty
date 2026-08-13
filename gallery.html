@@ -3,83 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | CymbolizeBeauty — Hair Transformation Photos Las Vegas</title>
-  <meta name="description" content="Before and after hair transformations by Cymonne at CymbolizeBeauty in Las Vegas. Mesh Integration, Invisible Bead Wefts, and hair loss solutions that restore confidence." />
+  <title>Gallery | CymbolizeBeauty Las Vegas</title>
+  <meta name="description" content="Hair transformation gallery — Mesh Integration, Invisible Bead Wefts, Custom Color, and hair loss solutions by Cymonne at CymbolizeBeauty Las Vegas." />
+  <link rel="canonical" href="https://cymbolizebeauty.com/gallery.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Before/After section sizing */
-    .ba-container {
-      max-width: 680px;
-      margin: 0 auto 40px;
-    }
-    .before-after-wrapper {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-    }
-    .ba-before, .ba-after {
-      width: 100%;
-      height: 100%;
-    }
-    .ba-before-bg {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1a3d4a 0%, #0d1f27 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: rgba(250,247,242,0.6);
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-size: 1.4rem;
-    }
-    .ba-after-bg {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #C9A96E 0%, #e2c898 50%, #132E38 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: rgba(13,31,39,0.8);
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-size: 1.4rem;
-    }
-    .ba-note {
-      font-family: var(--font-body);
-      font-style: normal;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.65;
-    }
-    .portfolio-placeholder-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ─── NAVBAR ─────────────────────────────────── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">CymbolizeBeauty</a>
+    <a href="index.html" class="nav-logo">Cymbolize<em>Beauty</em></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="education.html">Education</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="hair-loss.html">Hair Loss Info</a>
-      <a href="contact.html" class="btn btn-primary">Book Now</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="hair-loss.html">Hair Loss</a>
+      <a href="contact.html" class="btn btn-outline">Book Now</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -91,200 +35,168 @@
     <a href="services.html">Services</a>
     <a href="education.html">Education</a>
     <a href="gallery.html">Gallery</a>
-    <a href="hair-loss.html">Hair Loss Info</a>
+    <a href="hair-loss.html">Hair Loss</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="btn btn-primary">Book Now</a>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <span class="eyebrow">Transformations</span>
-    <h1>The Work Speaks <span>for Itself</span></h1>
-    <p>Real results for women who came in searching for solutions — and left feeling like themselves again.</p>
+<!-- ─── PAGE HERO ──────────────────────────────── -->
+<section class="page-hero grain">
+  <span class="ghost-letter ghost-tr">G</span>
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">
+      <span class="num">✦ 06</span>
+      <span class="label-txt">Transformations</span>
+      <span class="line"></span>
+    </div>
+    <h1 class="reveal">The work speaks<br>for <em>itself.</em></h1>
+    <p class="reveal delay-1">Real results for women who came in searching for solutions — and left feeling like themselves again. Every result is unique to the client.</p>
   </div>
 </section>
 
-<!-- BEFORE / AFTER SLIDERS -->
-<section class="section section-cream">
+<!-- ─── GALLERY GRID ───────────────────────────── -->
+<section class="section sec-ink grain">
+  <span class="ghost-letter ghost-bl">A</span>
   <div class="container">
-    <div class="section-header reveal">
-      <span class="eyebrow">Before &amp; After</span>
-      <h2>Slide to Reveal the Transformation</h2>
-      <p>Drag the slider left and right to see before and after results. Real client transformations coming soon — follow <a href="https://instagram.com/cymbolizebeauty" target="_blank" style="color:var(--gold);">@cymbolizebeauty</a> for the latest photos.</p>
-    </div>
-
-    <!-- Slider 1: Mesh Integration -->
-    <div class="ba-container reveal">
-      <p style="text-align:center; font-family:var(--font-heading); font-size:1.1rem; color:var(--teal); margin-bottom:16px;">Mesh Integration — Hair Loss Client</p>
-      <div class="before-after-wrapper" id="baSlider1">
-        <div class="ba-before">
-          <div class="ba-before-bg">
-            <span style="font-size:2rem;">💆</span>
-            <span>Before</span>
-            <span class="ba-note">Thinning / Hair Loss</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-after-bg">
-            <span style="font-size:2rem;">✨</span>
-            <span>After</span>
-            <span class="ba-note">Mesh Integration Complete</span>
-          </div>
-        </div>
-        <div class="ba-divider"></div>
-        <div class="ba-handle">⟷</div>
-        <div class="ba-label ba-label-before">Before</div>
-        <div class="ba-label ba-label-after">After</div>
+    <div class="sec-head">
+      <div class="sec-head-num reveal">01<span class="slash">/</span>12</div>
+      <div class="sec-head-title reveal delay-1">
+        <span class="label">Portfolio</span>
+        <h2 style="margin-top: 24px;">Client<br><em>transformations.</em></h2>
+        <p>Photos actively being added — follow <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" style="color: var(--gold);">@cymbolizebeauty</a> on Instagram for the most up-to-date results. Real photos coming soon — every result is unique to the client.</p>
       </div>
-      <p style="text-align:center; font-size:0.82rem; color:var(--text-light); margin-top:12px;">← Drag to compare →</p>
     </div>
-
-    <!-- Slider 2: Invisible Bead Wefts -->
-    <div class="ba-container reveal delay-2">
-      <p style="text-align:center; font-family:var(--font-heading); font-size:1.1rem; color:var(--teal); margin-bottom:16px;">Invisible Bead Wefts — Volume &amp; Length</p>
-      <div class="before-after-wrapper" id="baSlider2">
-        <div class="ba-before">
-          <div class="ba-before-bg">
-            <span style="font-size:2rem;">💆</span>
-            <span>Before</span>
-            <span class="ba-note">Fine / Fragile Hair</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-after-bg">
-            <span style="font-size:2rem;">🌿</span>
-            <span>After</span>
-            <span class="ba-note">Invisible Bead Wefts</span>
-          </div>
-        </div>
-        <div class="ba-divider"></div>
-        <div class="ba-handle">⟷</div>
-        <div class="ba-label ba-label-before">Before</div>
-        <div class="ba-label ba-label-after">After</div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
       </div>
-      <p style="text-align:center; font-size:0.82rem; color:var(--text-light); margin-top:12px;">← Drag to compare →</p>
-    </div>
-
-    <!-- Slider 3: Custom Color -->
-    <div class="ba-container reveal delay-4">
-      <p style="text-align:center; font-family:var(--font-heading); font-size:1.1rem; color:var(--teal); margin-bottom:16px;">Custom Color Transformation</p>
-      <div class="before-after-wrapper" id="baSlider3">
-        <div class="ba-before">
-          <div class="ba-before-bg">
-            <span style="font-size:2rem;">🎨</span>
-            <span>Before</span>
-            <span class="ba-note">Natural / Grown-Out Color</span>
-          </div>
-        </div>
-        <div class="ba-after">
-          <div class="ba-after-bg">
-            <span style="font-size:2rem;">💛</span>
-            <span>After</span>
-            <span class="ba-note">Custom Color Complete</span>
-          </div>
-        </div>
-        <div class="ba-divider"></div>
-        <div class="ba-handle">⟷</div>
-        <div class="ba-label ba-label-before">Before</div>
-        <div class="ba-label ba-label-after">After</div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
       </div>
-      <p style="text-align:center; font-size:0.82rem; color:var(--text-light); margin-top:12px;">← Drag to compare →</p>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
+      <div class="gallery-cell">
+        <div class="gallery-cell-inner">✦</div>
+      </div>
     </div>
-
-    <div class="text-center" style="margin-top:16px;">
-      <p style="font-family:var(--font-heading); font-style:italic; color:var(--text-mid); font-size:1.05rem;">Client photo gallery actively growing — check back soon!</p>
-    </div>
+    <p class="reveal" style="text-align: center; margin-top: 40px; font-family: var(--f-display); font-style: italic; font-size: 1.1rem; color: rgba(250,247,242,0.5);">Real photos coming soon — every result is unique to the client.</p>
   </div>
 </section>
 
-<!-- PORTFOLIO GRID -->
-<section class="section section-dark">
+<!-- ─── CATEGORIES ────────────────────────────── -->
+<section class="section sec-cream">
+  <span class="ghost-letter ghost-tr">L</span>
   <div class="container">
-    <div class="section-header reveal">
-      <span class="eyebrow">Portfolio</span>
-      <h2>More Work</h2>
-      <p>Photos are being added regularly. Follow @cymbolizebeauty on Instagram for the most up-to-date transformations.</p>
-    </div>
-    <div class="portfolio-placeholder-grid">
-      <div class="photo-placeholder reveal delay-1" style="height:300px;">
-        <div class="ph-icon">✨</div>
-        <p class="ph-title">Mesh Integration</p>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="photo-placeholder reveal delay-2" style="height:300px;">
-        <div class="ph-icon">💆</div>
-        <p class="ph-title">Hair Loss Client</p>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="photo-placeholder reveal delay-3" style="height:300px;">
-        <div class="ph-icon">🌿</div>
-        <p class="ph-title">Protective Style</p>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="photo-placeholder reveal delay-1" style="height:300px;">
-        <div class="ph-icon">🎨</div>
-        <p class="ph-title">Custom Color</p>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="photo-placeholder reveal delay-2" style="height:300px;">
-        <div class="ph-icon">💫</div>
-        <p class="ph-title">Brazilian Blowout</p>
-        <span>Photo coming soon</span>
-      </div>
-      <div class="photo-placeholder reveal delay-3" style="height:300px;">
-        <div class="ph-icon">🔮</div>
-        <p class="ph-title">Invisible Bead Wefts</p>
-        <span>Photo coming soon</span>
+    <div class="sec-head">
+      <div class="sec-head-num reveal">02<span class="slash">/</span>12</div>
+      <div class="sec-head-title reveal delay-1">
+        <span class="label">By Service</span>
+        <h2 style="margin-top: 24px; color: var(--ink);">What you'll<br><em style="color: var(--teal);">find here.</em></h2>
+        <p style="color: var(--text-mid);">Six service categories — each with before and afters currently being photographed and prepared for this gallery.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="section section-cream">
-  <div class="container text-center">
-    <span class="eyebrow">Stay Connected</span>
-    <h2 style="color:var(--teal);">Follow @cymbolizebeauty</h2>
-    <p style="color:var(--text-mid); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto;">New transformations, tips, and behind-the-scenes posted regularly on Instagram and TikTok. Come see the work in real time.</p>
-    <div class="ig-grid reveal" style="filter: saturate(0.7);">
-      <div class="ig-cell" style="background: linear-gradient(135deg, #132E38, #1a3d4a);">📸</div>
-      <div class="ig-cell" style="background: linear-gradient(135deg, #1a3d4a, #C9A96E);">✨</div>
-      <div class="ig-cell" style="background: linear-gradient(135deg, #C9A96E, #132E38);">💆</div>
-      <div class="ig-cell" style="background: linear-gradient(135deg, #132E38, #0d1f27);">🌿</div>
-      <div class="ig-cell" style="background: linear-gradient(135deg, #0d1f27, #C9A96E);">💛</div>
-      <div class="ig-cell" style="background: linear-gradient(135deg, #C9A96E, #132E38);">🎨</div>
-    </div>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
-      <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" class="btn btn-dark">Follow on Instagram</a>
-      <a href="https://tiktok.com/@cymbolizebeauty" target="_blank" rel="noopener" class="btn btn-outline">Follow on TikTok</a>
+    <div class="conditions" style="border-top-color: rgba(20,20,20,0.15);">
+      <div class="condition reveal" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">01</div>
+        <div class="condition-name" style="color: var(--ink);">Mesh Integration</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Full before-and-after transformations on hair loss clients. Alopecia, GLP-1 thinning, chemo recovery, and diffuse loss — every pattern of loss looks different, and the results are equally distinct. Photos coming soon.</div>
+      </div>
+      <div class="condition reveal delay-1" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">02</div>
+        <div class="condition-name" style="color: var(--ink);">Invisible Bead Wefts</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Volume and length transformations for fine-hair clients. You'll see the result in ponytails, updos, and down — because the real test of an IBW install is whether it holds up in every style. Photos coming soon.</div>
+      </div>
+      <div class="condition reveal delay-2" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">03</div>
+        <div class="condition-name" style="color: var(--ink);">K-Tips</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Individual strand placements that add density without bulk. Side-by-side comparisons showing how individual strand placement differs from weft methods — and why it creates the most natural blending. Photos coming soon.</div>
+      </div>
+      <div class="condition reveal" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">04</div>
+        <div class="condition-name" style="color: var(--ink);">Custom Color</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Color transformations built around skin undertone and hair condition — dimensional highlights, single-process depth, and extension blending. Before and afters that show color as enhancement rather than change. Photos coming soon.</div>
+      </div>
+      <div class="condition reveal delay-1" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">05</div>
+        <div class="condition-name" style="color: var(--ink);">Brazilian Blowout</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Frizz-to-smooth transformations — same day before-and-afters that demonstrate exactly how keratin smoothing changes the texture and manageability of different hair types. Photos coming soon.</div>
+      </div>
+      <div class="condition reveal delay-2" style="border-bottom-color: rgba(20,20,20,0.1);">
+        <div class="condition-num" style="color: var(--teal);">06</div>
+        <div class="condition-name" style="color: var(--ink);">Protective Styles</div>
+        <div class="condition-desc" style="color: var(--text-mid);">Low-manipulation styles that protect while looking beautiful. Results that show protective styling as an aesthetic choice — not just a clinical one. Photos coming soon.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-content">
-    <span class="eyebrow">Your Turn</span>
-    <h2>Ready for your own <span>transformation?</span></h2>
-    <p>Every before-and-after starts with a single conversation. Book yours today.</p>
-    <div class="btn-group">
-      <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+<!-- ─── SOCIAL BLOCK ───────────────────────────── -->
+<section class="social-block grain">
+  <span class="ghost-letter ghost-center">G</span>
+  <div class="social-block-inner">
+    <span class="label center no-line reveal">See More</span>
+    <h3 class="reveal delay-1">@cymbolize<em>beauty</em></h3>
+    <p class="reveal delay-2">New transformations, technique breakdowns, and behind-the-scenes posted regularly on Instagram and TikTok. Come see the work in real time before the gallery goes live.</p>
+    <div class="social-btns reveal delay-3">
+      <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" class="btn btn-outline">Instagram</a>
+      <a href="https://tiktok.com/@cymbolizebeauty" target="_blank" rel="noopener" class="btn btn-outline">TikTok</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ─── CTA ───────────────────────────────────── -->
+<section class="cta grain">
+  <span class="ghost-letter ghost-center">A</span>
+  <div class="cta-inner">
+    <span class="label center reveal">Your Turn</span>
+    <h2 class="reveal delay-1" style="margin-top: 24px;">Ready for your own<br><em>transformation?</em></h2>
+    <p class="reveal delay-2">Every before-and-after starts with a single conversation. Book yours today — Cymonne responds personally to every message.</p>
+    <div class="cta-btns reveal delay-3">
+      <a href="contact.html" class="btn btn-primary btn-lg">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────── -->
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="index.html" class="footer-logo">CymbolizeBeauty</a>
-        <p class="footer-tagline">"Giving women back the version of themselves hair loss tried to erase"</p>
-        <div class="social-links">
-          <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" class="social-link">📷</a>
-          <a href="https://tiktok.com/@cymbolizebeauty" target="_blank" rel="noopener" class="social-link">🎵</a>
+        <a href="index.html" class="footer-logo">Cymbolize<em>Beauty</em></a>
+        <p class="footer-tag">"Giving women back the version of themselves hair loss tried to erase."</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://tiktok.com/@cymbolizebeauty" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-col">
@@ -303,22 +215,25 @@
           <li><a href="hair-loss.html">Hair Loss Info</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Book Now</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <div class="footer-contact-item"><span class="icon">✉</span> Support@cymbolizebeauty.com</div>
-        <div class="footer-contact-item"><span class="icon">📍</span> Las Vegas, NV</div>
-        <div class="footer-contact-item"><span class="icon">📷</span> @cymbolizebeauty</div>
+        <div class="footer-contact-item">Support@cymbolizebeauty.com</div>
+        <div class="footer-contact-item">Las Vegas · NV</div>
+        <div class="footer-contact-item">@cymbolizebeauty</div>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 CymbolizeBeauty. All Rights Reserved.</p>
-      <p>Designed with 💛 for women reclaiming their confidence</p>
+      <p><em>Designed for women reclaiming their confidence.</em></p>
     </div>
   </div>
 </footer>
 
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
 <script src="main.js"></script>
 </body>
 </html>
