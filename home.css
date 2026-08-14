@@ -709,3 +709,15 @@
 
 /* label spacing above h2s */
 .hm-label { margin-bottom: 18px; }
+
+/* service pricing line (from live booking menu) */
+.hm-service-price {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--hm-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
