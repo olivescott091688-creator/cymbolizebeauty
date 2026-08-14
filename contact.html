@@ -51,7 +51,7 @@
       <span class="line"></span>
     </div>
     <h1 class="reveal">Start the<br><em>conversation.</em></h1>
-    <p class="reveal delay-1">Every transformation starts with a single message. Cymonne personally reads and responds to every inquiry — no automation, no assistant, no form letter. Just a real response from the specialist.</p>
+    <p class="reveal delay-1">Start with a $50 FaceTime consultation or a $75 in-person visit — or send a message below and tell Cymonne what's going on with your hair. Every message is confidential.</p>
   </div>
 </section>
 
@@ -68,7 +68,7 @@
         <p style="color: rgba(250,247,242,0.65); margin-bottom: 40px; line-height: 1.75;">All messages are completely confidential. The more you share, the better Cymonne can prepare to help you. There's no pressure to book — this is just a conversation.</p>
 
         <div class="form-success" id="formSuccess">
-          Message received. Cymonne will be in touch personally — usually within 24 hours.
+          Message received. Cymonne will be in touch.
         </div>
 
         <form id="contactForm" novalidate>
@@ -90,14 +90,17 @@
               <label for="service">Service Interested In</label>
               <select id="service" name="service">
                 <option value="">— Select a service —</option>
+                <option value="Consultation — FaceTime or In-Person">Consultation — FaceTime or In-Person</option>
                 <option value="Mesh Integration">Mesh Integration</option>
-                <option value="Hair Loss Consultation">Hair Loss Consultation</option>
-                <option value="Invisible Bead Wefts">Invisible Bead Wefts</option>
+                <option value="Hidden Bead Extensions">Hidden Bead Extensions</option>
                 <option value="K-Tips">K-Tips</option>
-                <option value="Sew-In Extensions">Sew-In Extensions</option>
+                <option value="Full Sew-In">Full Sew-In</option>
+                <option value="Magic Part Weave">Magic Part Weave</option>
+                <option value="Custom Wig">Custom Wig</option>
+                <option value="Color — All-Over / Retouch / Balayage">Color — All-Over / Retouch / Balayage</option>
                 <option value="Brazilian Blowout">Brazilian Blowout</option>
-                <option value="Custom Color">Custom Color</option>
-                <option value="Protective Styles">Protective Styles</option>
+                <option value="Silk Press / Blowout / Haircut">Silk Press / Blowout / Haircut</option>
+                <option value="Extensions Removal">Extensions Removal</option>
                 <option value="Education Program — Elevate">Education Program — Elevate</option>
                 <option value="Not sure — need guidance">Not sure — need guidance</option>
               </select>
@@ -108,7 +111,7 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 20px; font-size: 0.82rem; margin-top: 8px;">Send Message</button>
-          <p style="text-align: center; font-size: 0.75rem; color: rgba(250,247,242,0.35); margin-top: 16px; letter-spacing: 0.05em;">Your message goes directly to Cymonne. 100% confidential.</p>
+          <p style="text-align: center; font-size: 0.75rem; color: rgba(250,247,242,0.35); margin-top: 16px; letter-spacing: 0.05em;">All messages are 100% confidential.</p>
         </form>
       </div>
 
@@ -138,24 +141,15 @@
         </div>
 
         <div style="margin-top: 48px; padding: 32px; border: 1px solid rgba(201,169,110,0.2); background: rgba(201,169,110,0.04);">
-          <span class="label" style="margin-bottom: 16px; display: block;">What to Expect</span>
-          <div class="conditions" style="border: none;">
-            <div class="condition" style="padding: 16px 0; border-bottom: 1px solid rgba(201,169,110,0.1);">
-              <div class="condition-num" style="font-size: 0.85rem;">01</div>
-              <div class="condition-desc" style="font-size: 0.9rem; color: rgba(250,247,242,0.65);">Fill out the form with your info and any questions</div>
-            </div>
-            <div class="condition" style="padding: 16px 0; border-bottom: 1px solid rgba(201,169,110,0.1);">
-              <div class="condition-num" style="font-size: 0.85rem;">02</div>
-              <div class="condition-desc" style="font-size: 0.9rem; color: rgba(250,247,242,0.65);">Cymonne reviews and responds personally — usually within 24 hours</div>
-            </div>
-            <div class="condition" style="padding: 16px 0; border-bottom: 1px solid rgba(201,169,110,0.1);">
-              <div class="condition-num" style="font-size: 0.85rem;">03</div>
-              <div class="condition-desc" style="font-size: 0.9rem; color: rgba(250,247,242,0.65);">You'll discuss your hair history, goals, and which service fits best</div>
-            </div>
-            <div class="condition" style="padding: 16px 0;">
-              <div class="condition-num" style="font-size: 0.85rem;">04</div>
-              <div class="condition-desc" style="font-size: 0.9rem; color: rgba(250,247,242,0.65);">A consultation is scheduled — no pressure, just conversation</div>
-            </div>
+          <span class="label" style="margin-bottom: 20px; display: block;">Studio Hours</span>
+          <div class="hours-table hours-on-dark">
+            <div class="hrow"><span class="day">Monday</span><span class="time closed">Closed</span></div>
+            <div class="hrow"><span class="day">Tuesday</span><span class="time">12 PM – 9 PM</span></div>
+            <div class="hrow"><span class="day">Wednesday</span><span class="time">12 PM – 9 PM</span></div>
+            <div class="hrow"><span class="day">Thursday</span><span class="time">10 AM – 8 PM</span></div>
+            <div class="hrow"><span class="day">Friday</span><span class="time">9 AM – 6 PM</span></div>
+            <div class="hrow"><span class="day">Saturday</span><span class="time">8 AM – 6 PM</span></div>
+            <div class="hrow"><span class="day">Sunday</span><span class="time closed">Closed</span></div>
           </div>
         </div>
       </div>
@@ -210,11 +204,38 @@
       <div class="stat-lbl">Mesh Integration<br>Certified</div>
     </div>
     <div class="stat reveal delay-3">
-      <div class="stat-val">24h</div>
-      <div class="stat-lbl">Personal Response<br>Time</div>
+      <div class="stat-val">$50</div>
+      <div class="stat-lbl">FaceTime Consults<br>Available</div>
     </div>
   </div>
 </div>
+
+<!-- ─── CANCELLATION POLICY ────────────────── -->
+<section class="section sec-cream" id="policy">
+  <div class="container">
+    <div class="two-col" style="align-items: flex-start; gap: 80px;">
+      <div class="reveal-left">
+        <span class="label">Before You Book</span>
+        <h2 style="margin-top: 24px; color: var(--ink);">Cancellation<br><em style="color: var(--teal);">policy.</em></h2>
+        <p style="color: var(--text-mid); margin-top: 24px; line-height: 1.85;">Our goal is to provide quality care in a timely manner. Appointments are in high demand, and an early cancellation gives another woman the opportunity to access timely care.</p>
+      </div>
+      <div class="reveal-right delay-1">
+        <div class="policy-item">
+          <span class="policy-num">01</span>
+          <p>At the time of booking, you'll be asked to pay a deposit that is credited toward your treatment. Time has been specifically reserved for your appointment.</p>
+        </div>
+        <div class="policy-item">
+          <span class="policy-num">02</span>
+          <p>If you need to cancel or reschedule, please do so at least <strong>24 hours</strong> before your appointment — your deposit will be transferred to a future appointment.</p>
+        </div>
+        <div class="policy-item">
+          <span class="policy-num">03</span>
+          <p>Cancellations with less than 24 hours' notice forfeit the deposit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── FOOTER ────────────────────────────────── -->
 <footer id="footer">
@@ -247,9 +268,21 @@
         <ul>
           <li><a href="hair-loss.html">Hair Loss Info</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Book Now</a></li>
+          <li><a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener">Book Now</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#policy">Cancellation Policy</a></li>
         </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Hours</h5>
+        <div class="footer-hours">
+          <div><span>Mon</span><span class="fh-closed">Closed</span></div>
+          <div><span>Tue &ndash; Wed</span><span>12 &ndash; 9</span></div>
+          <div><span>Thu</span><span>10 &ndash; 8</span></div>
+          <div><span>Fri</span><span>9 &ndash; 6</span></div>
+          <div><span>Sat</span><span>8 &ndash; 6</span></div>
+          <div><span>Sun</span><span class="fh-closed">Closed</span></div>
+        </div>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>

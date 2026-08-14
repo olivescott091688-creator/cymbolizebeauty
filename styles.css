@@ -2415,3 +2415,73 @@ p  { font-size: 1.05rem; line-height: 1.82; }
 }
 @media (max-width: 768px) { .hfull-h1 { font-size: 3rem; } }
 @media (max-width: 480px) { .hfull-h1 { font-size: 2.2rem; } }
+
+/* ============================================================
+   Hours & Policy (2026-08-14)
+   ============================================================ */
+.footer-hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.08);
+  font-family: var(--f-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(250,247,242,0.55);
+}
+.footer-hours div:last-child { border-bottom: none; }
+.footer-hours .fh-closed { color: rgba(250,247,242,0.28); font-style: italic; }
+
+.hours-table { border-top: 1px solid rgba(12,31,42,0.14); }
+.hours-table .hrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 13px 2px;
+  border-bottom: 1px solid rgba(12,31,42,0.14);
+}
+.hours-table .day {
+  font-family: var(--f-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.hours-table .time {
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+}
+.hours-table .time.closed { color: var(--text-light); font-style: italic; }
+.hours-table.hours-on-dark { border-top-color: rgba(201,169,110,0.18); }
+.hours-table.hours-on-dark .hrow { border-bottom-color: rgba(201,169,110,0.12); }
+.hours-table.hours-on-dark .day { color: var(--gold); }
+.hours-table.hours-on-dark .time { color: rgba(250,247,242,0.7); }
+.hours-table.hours-on-dark .time.closed { color: rgba(250,247,242,0.3); }
+
+.policy-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(12,31,42,0.14);
+}
+.policy-item:first-child { padding-top: 8px; }
+.policy-item:last-child { border-bottom: none; }
+.policy-num {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.policy-item p {
+  font-family: var(--f-body);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin: 0;
+}
+.policy-item strong { color: var(--ink); font-weight: 600; }

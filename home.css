@@ -721,3 +721,56 @@
   text-transform: uppercase;
   color: var(--gold);
 }
+
+/* ============================================================
+   v5.3 — luxury detailing pass
+   ============================================================ */
+
+/* section labels get a fine gold rule lead-in */
+.hm-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.hm-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), rgba(201,169,110,0.25));
+}
+
+/* Who We Help — roman numeral markers */
+.hm-who-row { grid-template-columns: 56px 320px 1fr; }
+.hm-who-num {
+  font-family: var(--hm-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold);
+  padding-top: 6px;
+}
+
+/* Journey — thin-stroke icons */
+.hm-journey-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+  opacity: 0.85;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Core values — interpunct separation */
+.hm-values-list { gap: clamp(16px, 2.8vw, 44px); }
+.hm-values-list span { display: inline-flex; align-items: baseline; }
+.hm-values-list span:not(:last-child)::after {
+  content: '·';
+  color: var(--gold);
+  margin-left: clamp(16px, 2.8vw, 44px);
+  font-family: var(--hm-display);
+}
+
+@media (max-width: 980px) {
+  .hm-who-row { grid-template-columns: 1fr; }
+  .hm-who-num { padding-top: 0; }
+}
