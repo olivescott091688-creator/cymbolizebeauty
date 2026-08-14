@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
 
@@ -42,427 +43,249 @@
 </nav>
 
 <!-- ─── HERO ────────────────────────────────────── -->
-<section class="section sec-ink grain" style="min-height:78vh; display:flex; align-items:flex-end; position:relative; padding:0;">
-  <img src="hero.jpg" alt="" aria-hidden="true" class="hero-bg-img" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 18%; z-index:0;">
-  <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; background:linear-gradient(to bottom, rgba(12,31,42,0.15) 0%, rgba(12,31,42,0.2) 35%, rgba(12,31,42,0.9) 100%);"></div>
-  <div class="container" style="position:relative; z-index:3; padding-bottom:64px; padding-top:120px;">
-    <div style="max-width:620px;">
-      <div class="label no-line reveal" style="margin-bottom:24px;">Las Vegas · Hair Loss Studio</div>
-      <h1 class="reveal delay-1" style="font-family:var(--f-display); font-style:italic; font-weight:400; font-size:clamp(2.8rem,6vw,5rem); line-height:1.1; letter-spacing:-0.02em; color:var(--cream); margin-bottom:20px;">
-        The specialist<br>your hair has been<br><em style="color:var(--gold);">waiting for.</em>
-      </h1>
-      <p class="reveal delay-2" style="font-size:1rem; line-height:1.8; color:rgba(250,247,242,.6); max-width:480px; margin-bottom:36px;">
-        Mesh Integration, custom extensions, and hair loss consultations — for the women other stylists couldn't help.
-      </p>
-      <div class="reveal delay-3" style="display:flex; flex-direction:column; align-items:flex-start; gap:20px; margin-top:8px;">
-        <a href="contact.html" style="display:inline-flex; align-items:center; gap:18px; font-family:var(--f-body); font-size:0.7rem; font-weight:700; letter-spacing:0.28em; text-transform:uppercase; color:var(--cream); text-decoration:none; padding-bottom:12px; border-bottom:1px solid rgba(201,169,110,0.5);">
-          Book a Consultation
-          <svg width="28" height="8" viewBox="0 0 28 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="24" y2="4" stroke="#C9A96E" stroke-width="0.8"/><polyline points="21,1 25,4 21,7" fill="none" stroke="#C9A96E" stroke-width="0.8"/></svg>
-        </a>
-        <a href="services.html" style="display:inline-flex; align-items:center; gap:10px; font-family:var(--f-body); font-size:0.68rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(250,247,242,0.4); text-decoration:none;">
-          All Services
-          <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="3" x2="11" y2="3" stroke="currentColor" stroke-width="0.8"/><polyline points="9,1 12,3 9,5" fill="none" stroke="currentColor" stroke-width="0.8"/></svg>
-        </a>
+<section class="hm-hero">
+  <img src="hero.jpg" alt="Cymonne — Hair Loss Specialist, Las Vegas" class="hm-hero-bg">
+  <div class="hm-hero-veil" aria-hidden="true"></div>
+  <div class="hm-hero-content">
+    <p class="hm-hero-eyebrow">Hair Loss Specialist &mdash; Las Vegas</p>
+    <h1 class="hm-hero-h1">The specialist your hair<br>has been waiting for.</h1>
+    <div class="hm-hero-actions">
+      <a href="contact.html" class="hm-btn hm-btn-teal">Book a Consultation</a>
+      <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" class="hm-btn hm-btn-ghost">DM on Instagram</a>
+    </div>
+  </div>
+  <div class="hm-hero-bar">
+    <div class="hm-hero-bar-inner">
+      <span>Las Vegas · Nevada</span>
+      <a href="mailto:Support@cymbolizebeauty.com">Support@cymbolizebeauty.com</a>
+      <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener">@cymbolizebeauty</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ───────────────────────────────────── -->
+<section class="hm-section hm-cream">
+  <div class="hm-wrap">
+    <div class="hm-about-grid">
+      <div class="hm-portrait reveal-left">
+        <!-- Replace with: <img src="cymonne-portrait.jpg" alt="Cymonne, founder of CymbolizeBeauty"> -->
+        <span class="hm-portrait-cap">Cymonne · Founder</span>
+      </div>
+      <div class="hm-about-text reveal-right">
+        <span class="hm-label">The Founder</span>
+        <h2 class="hm-h2">Meet Cymonne.</h2>
+        <p>Cymonne is the founder of CymbolizeBeauty and an Elevate-certified Mesh Integration specialist in Las Vegas. Her studio was built for the women most stylists don't know how to help — women experiencing hair loss from GLP-1 medications, chemotherapy, hormones, and alopecia, and women with naturally fine, fragile hair.</p>
+        <p>What she's most proud of isn't the ranking or the reviews. It's helping the women other stylists have turned away because of their hair loss — with a mission that hasn't changed since day one: to hand a woman back the version of herself that hair loss tried to erase.</p>
+        <div class="hm-about-stats">
+          <div><strong>Elevate</strong><span>Certified Specialist</span></div>
+          <div><strong>5.0 ★</strong><span>Google Reviews</span></div>
+          <div><strong>#5</strong><span>Las Vegas · June 2026</span></div>
+        </div>
+        <a href="about.html" class="hm-btn hm-btn-ink">More About Cymonne</a>
+      </div>
+    </div>
+    <div class="hm-values reveal">
+      <span class="hm-values-label">Core Values</span>
+      <div class="hm-values-list">
+        <span>Compassion</span><span>Discretion</span><span>Education</span><span>Luxury</span><span>Natural Results</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── INTRO ───────────────────────────────────── -->
-<section class="section sec-cream" style="padding:80px 0;">
-  <div class="container" style="max-width:800px;">
-    <span class="label center reveal" style="margin-bottom:28px; display:block; color:var(--ink);">The Studio</span>
-    <p class="reveal delay-1" style="font-family:var(--f-display); font-style:italic; font-size:clamp(1.15rem,1.9vw,1.55rem); line-height:1.75; color:var(--ink); text-align:center;">
-      Cymonne built this studio for one reason — most salons aren't trained to serve women experiencing hair loss, and those women know it. Eight specialized services. A real specialist. Las Vegas.
-    </p>
-  </div>
-</section>
-
-
-
-<!-- ─── PHOTO STRIP (3 portfolio slots) ──────────── -->
-<div class="photo-strip">
-  <div class="photo-strip-cell">
-    <!-- Replace with: <img src="work-1.jpg" alt="Mesh Integration result"> -->
-    <div class="photo-strip-label">Before &amp; After</div>
-  </div>
-  <div class="photo-strip-cell">
-    <!-- Replace with: <img src="work-2.jpg" alt="Hair extension transformation"> -->
-    <div class="photo-strip-label">Mesh Integration</div>
-  </div>
-  <div class="photo-strip-cell">
-    <!-- Replace with: <img src="work-3.jpg" alt="Hair loss solution result"> -->
-    <div class="photo-strip-label">The Work</div>
-  </div>
-</div>
-
-<!-- ─── WHO I HELP ───────────────────────────────── -->
-<div class="sec-divider"></div>
-<section class="section sec-ink grain">
-  <div class="container">
-    <div class="sec-head">
-      <div class="sec-head-num reveal">01<span class="slash">/</span>07</div>
-      <div class="sec-head-title reveal delay-1">
-        <span class="label">Who I Help</span>
-        <h2 style="margin-top: 20px;">You're not<br>alone in this.</h2>
-        <p>Four distinct patterns of hair loss. Four completely tailored approaches. Every consultation begins with an honest assessment — not a template.</p>
+<!-- ─── SERVICES ────────────────────────────────── -->
+<section class="hm-section hm-dark grain">
+  <div class="hm-wrap">
+    <div class="hm-services-head">
+      <div class="reveal">
+        <span class="hm-label">Services</span>
+        <h2 class="hm-h2">Every service,<br>hair-health first.</h2>
       </div>
+      <p class="hm-deck reveal delay-1">In Cymonne's words: "Most stylists install hair extensions the traditional way — and have no idea what to do for women who have visible hair loss." Everything offered here is designed for fine, fragile, and thinning hair.</p>
     </div>
-    <div class="conditions">
-      <div class="condition reveal">
-        <div class="condition-num">01</div>
-        <div class="condition-name">GLP-1 Medication<br>Hair Loss</div>
-        <div class="condition-desc">Ozempic, Wegovy, and Mounjaro cause diffuse thinning that spreads across the full scalp. Cymonne specializes in coverage solutions built specifically for this pattern — adding density across the whole head. This type of loss is also often temporary, which factors into treatment planning.</div>
-      </div>
-      <div class="condition reveal delay-1">
-        <div class="condition-num">02</div>
-        <div class="condition-name">Chemotherapy &amp;<br>Treatment</div>
-        <div class="condition-desc">Hair loss during cancer treatment is one of the most emotionally significant experiences a woman can go through. Cymonne approaches every chemo client with particular sensitivity and flexible timing, using methods specifically designed for sensitive or reactive scalps.</div>
-      </div>
-      <div class="condition reveal delay-2">
-        <div class="condition-num">03</div>
-        <div class="condition-name">Alopecia</div>
-        <div class="condition-desc">Areata, androgenetic, or traction alopecia — each presents differently. Mesh Integration was designed with alopecia clients in mind because it doesn't require a continuous base of hair. It works directly from the scalp, regardless of how patchy or sparse your existing hair may be.</div>
-      </div>
-      <div class="condition reveal delay-3">
-        <div class="condition-num">04</div>
-        <div class="condition-name">Hormonal &amp;<br>Fine Hair</div>
-        <div class="condition-desc">Postpartum shedding, perimenopause, thyroid-related thinning, or naturally fine and fragile hair — traditional extensions often cause more damage than help. Cymonne works exclusively with methods that add volume without putting mechanical stress on vulnerable strands.</div>
-      </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">01</span>
+      <span class="hm-service-name">Mesh Integration</span>
+      <p class="hm-service-desc">Cymonne's signature specialty and the technique she's Elevate-certified in — hair systems built for women with visible hair loss, including the women other salons have turned away.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
     </div>
-    <div style="margin-top: 60px; position: relative; z-index: 2;">
-      <a href="hair-loss.html" class="btn btn-outline reveal">All Hair Loss Solutions</a>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">02</span>
+      <span class="hm-service-name">Invisible Bead Wefts</span>
+      <p class="hm-service-desc">Specialty extension work for fine and fragile hair — one of the core methods Cymonne teaches other stylists in her certification program.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">03</span>
+      <span class="hm-service-name">K-Tips</span>
+      <p class="hm-service-desc">Strand-by-strand extensions for a seamless, natural result — matched to your hair, your color, and your goals.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">04</span>
+      <span class="hm-service-name">Sew-In Extensions</span>
+      <p class="hm-service-desc">Offered in the studio and taught in her education program — a staple of Cymonne's extension work.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">05</span>
+      <span class="hm-service-name">Brazilian Blowout</span>
+      <p class="hm-service-desc">Professional smoothing that leaves hair softer, sleeker, and easier to manage day to day.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">06</span>
+      <span class="hm-service-name">Custom Color</span>
+      <p class="hm-service-desc">Color built with the health of your hair in mind — the thing clients mention most in her five-star reviews.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">07</span>
+      <span class="hm-service-name">Hair Loss Consultations</span>
+      <p class="hm-service-desc">Where every journey starts. Cymonne takes the time to assess your hair and create a plan to treat and maintain it — "quality, intentional hair care," in her clients' words.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
+    </div>
+    <div class="hm-service-row reveal">
+      <span class="hm-service-num">08</span>
+      <span class="hm-service-name">Protective Styles</span>
+      <p class="hm-service-desc">Styles that keep your natural hair protected while it grows — beautiful now, healthier later.</p>
+      <a href="contact.html" class="hm-service-book">Book</a>
     </div>
   </div>
 </section>
 
-<!-- ─── MESH INTEGRATION — image left, text right ── -->
-<div class="sec-divider on-teal"></div>
-<section class="section sec-teal grain">
-  <div class="container">
-    <div class="two-col">
+<!-- ─── WHO WE HELP ─────────────────────────────── -->
+<section class="hm-section hm-cream">
+  <div class="hm-wrap">
+    <span class="hm-label reveal">Who She Helps</span>
+    <h2 class="hm-h2 reveal" style="max-width:640px; margin-bottom:64px;">Whatever the reason, you're in the right place.</h2>
+    <div class="hm-who-row reveal">
+      <h3 class="hm-who-name">GLP-1 Medication Hair Loss</h3>
+      <p class="hm-who-desc">If your medication changed your hair, you're one of the exact women this studio was built for — with specialty extensions designed for fine, fragile strands instead of traditional installs.</p>
+    </div>
+    <div class="hm-who-row reveal">
+      <h3 class="hm-who-name">Chemotherapy &amp; Treatment</h3>
+      <p class="hm-who-desc">What Cymonne is most proud of: helping the women other stylists turned away because of their hair loss. Women navigating treatment are at the heart of that promise.</p>
+    </div>
+    <div class="hm-who-row reveal">
+      <h3 class="hm-who-name">Alopecia</h3>
+      <p class="hm-who-desc">Hair extensions for women experiencing hair loss isn't a side offering here — it's Cymonne's primary specialty and the entire reason CymbolizeBeauty exists.</p>
+    </div>
+    <div class="hm-who-row reveal">
+      <h3 class="hm-who-name">Hormonal &amp; Fine Hair</h3>
+      <p class="hm-who-desc">Hormonal changes, thinning, or naturally fine and fragile hair — Cymonne's specialty extensions are designed for exactly the hair that traditional methods were never made for.</p>
+    </div>
+    <div style="margin-top:56px;">
+      <a href="hair-loss.html" class="hm-btn hm-btn-ink reveal">All Hair Loss Solutions</a>
+    </div>
+  </div>
+</section>
 
-      <!-- Photo placeholder LEFT -->
-      <div class="reveal-left">
-        <div class="visual grain" style="aspect-ratio: 3/4; min-height: 420px;">
-          <!-- Replace with: <img src="mesh-integration.jpg" alt="Mesh Integration technique"> -->
-          <div class="visual-inner">
-            <div class="mark" style="font-size: 3rem; opacity: 0.5;">+</div>
-            <div class="cap">Technique Photo</div>
-          </div>
+<!-- ─── THE JOURNEY ─────────────────────────────── -->
+<section class="hm-section hm-dark grain hm-journey" data-inview>
+  <div class="hm-wrap">
+    <span class="hm-label">The Process</span>
+    <h2 class="hm-h2" style="max-width:560px;">What happens when you reach out.</h2>
+    <div class="hm-journey-grid">
+      <div class="hm-journey-line" aria-hidden="true"></div>
+      <div class="hm-journey-step">
+        <div class="hm-journey-num-clip"><div class="hm-journey-num">1</div></div>
+        <h3>Reach Out</h3>
+        <p>Fill out the contact form, email, or DM @cymbolizebeauty. Go at your own pace — one client messaged back and forth with Cymonne for months before she felt ready to come in.</p>
+      </div>
+      <div class="hm-journey-step">
+        <div class="hm-journey-num-clip"><div class="hm-journey-num">2</div></div>
+        <h3>Your Consultation</h3>
+        <p>Cymonne takes the time to assess your hair and create a plan to treat and maintain it going forward — that's not marketing copy, it's a direct line from one of her five-star reviews.</p>
+      </div>
+      <div class="hm-journey-step">
+        <div class="hm-journey-num-clip"><div class="hm-journey-num">3</div></div>
+        <h3>Your Transformation</h3>
+        <p>In her clients' words: like being given their youth back. Confidence back. Enjoying taking pictures again.</p>
+      </div>
+    </div>
+    <div style="margin-top:64px;">
+      <a href="contact.html" class="hm-btn hm-btn-teal">Start the Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE ORIGIN ──────────────────────────────── -->
+<section class="hm-section hm-cream">
+  <div class="hm-wrap">
+    <div class="hm-origin-grid">
+      <div class="hm-origin-text reveal-left">
+        <span class="hm-label">Her Story</span>
+        <h2 class="hm-h2">It started with her grandmother.</h2>
+        <p class="hm-origin-lead">"I didn't even know she wore a wig — she never took it off in front of anyone."</p>
+        <p>One day, a young Cymonne found her grandmother crying. When she finally told the truth, it was this: she felt ugly. She didn't feel like a woman without the wig — and even though it was uncomfortable and painful to wear, she was too ashamed to take it off.</p>
+        <p>That was the moment that set the course of Cymonne's life. She decided right then she would become a hairstylist who gave women back their confidence and self-esteem.</p>
+        <div style="margin-top:36px;">
+          <a href="about.html" class="hm-btn hm-btn-ink">Read Cymonne's Story</a>
         </div>
       </div>
+      <div class="hm-portrait reveal-right">
+        <!-- Replace with: <img src="cymonne-portrait-2.jpg" alt="Cymonne in the studio"> -->
+        <span class="hm-portrait-cap">Studio Portrait</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Text RIGHT -->
-      <div class="reveal-right delay-1">
-        <span class="feature-badge">✦ Signature Specialty</span>
-        <h2 class="feature-display" style="margin: 20px 0 24px;">Mesh<br><em>Integration.</em></h2>
-        <div class="feature-body">
-          <p>A fine, breathable mesh base — custom-matched to your scalp tone — is placed gently against the scalp. Human hair is woven individually through the mesh openings, building coverage directly from the scalp outward.</p>
-          <p>It works on virtually any density — including areas of visible scalp that traditional extensions cannot reach. No traction on fragile strands. No heat or adhesive at the attachment point.</p>
-          <p>The result moves, washes, and behaves exactly like natural hair. Clients consistently describe it as impossible to detect.</p>
+<!-- ─── TESTIMONIALS ────────────────────────────── -->
+<section class="hm-section hm-dark grain hm-tst" data-inview>
+  <div class="hm-wrap">
+    <div class="hm-tst-grid">
+
+      <div class="hm-tst-summary">
+        <div class="hm-tst-score">5.0</div>
+        <div class="hm-tst-stars" aria-label="Five out of five stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <div style="margin-top: 32px;">
-          <a href="services.html" class="btn btn-primary">View All Services</a>
-        </div>
+        <p class="hm-tst-sub">A perfect 5.0 rating on Google. Real clients, in their own words.</p>
+        <a href="https://www.google.com/search?q=CymbolizeBeauty+Las+Vegas+reviews" target="_blank" rel="noopener" class="hm-btn hm-btn-ghost">Read Reviews on Google</a>
+      </div>
+
+      <div class="hm-tst-quotes">
+        <figure class="hm-tst-quote">
+          <blockquote>“She focused on the health of my natural hair, not just the style. I left with my hair in way better condition than when I came. She took the time to assess my hair and created a plan for us to treat and maintain it going forward.”</blockquote>
+          <figcaption>
+            <span class="hm-tst-name">Miri Pearson</span>
+            <span class="hm-tst-tag">Hair Health Plan</span>
+          </figcaption>
+        </figure>
+        <figure class="hm-tst-quote">
+          <blockquote>“Absolutely wonderful experience and stunning results. Mesh Integration due to hair loss — very patient and professional to your personal needs.”</blockquote>
+          <figcaption>
+            <span class="hm-tst-name">Lisa Beard</span>
+            <span class="hm-tst-tag">Mesh Integration</span>
+          </figcaption>
+        </figure>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─── SERVICES LIST ─────────────────────────────── -->
-<div class="sec-divider on-cream"></div>
-<section class="section sec-cream">
-  <div class="container">
-    <div class="sec-head">
-      <div class="sec-head-num reveal">02<span class="slash">/</span>07</div>
-      <div class="sec-head-title reveal delay-1">
-        <span class="label">What We Offer</span>
-        <h2 style="margin-top: 20px;">Services built<br>for <em style="font-style:italic; color:var(--teal);">your hair.</em></h2>
-        <p>Every service designed hair-health first — no chemicals, adhesives, or mechanical stress at the attachment point.</p>
+<!-- ─── EDUCATION ───────────────────────────────── -->
+<section class="hm-section hm-cream">
+  <div class="hm-wrap">
+    <div class="hm-edu-grid">
+      <div class="hm-portrait reveal-left">
+        <!-- Replace with: <img src="education-class.jpg" alt="Cymonne teaching Mesh Integration"> -->
+        <span class="hm-portrait-cap">Education &amp; Training</span>
       </div>
-    </div>
-    <div class="services-list">
-      <div class="service reveal">
-        <div class="service-num">01</div>
-        <div class="service-name">Mesh Integration</div>
-        <div class="service-desc">The primary hair loss solution. A breathable mesh base anchors directly to the scalp, creating coverage on any density — including visible scalp. No traction, no adhesive.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal delay-1">
-        <div class="service-num">02</div>
-        <div class="service-name">Invisible Bead Wefts</div>
-        <div class="service-desc">Flat silicone-lined beads with no heat, no glue. Undetectable in a high ponytail. Ideal for fine-hair clients who need volume without mechanical stress.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal delay-2">
-        <div class="service-num">03</div>
-        <div class="service-name">K-Tips</div>
-        <div class="service-desc">Individual keratin-bonded strands heat-fused close to the scalp for a flat, undetectable result. Each strand moves independently. Best for clients with some existing density.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal">
-        <div class="service-num">04</div>
-        <div class="service-name">Sew-In Extensions</div>
-        <div class="service-desc">Modified flat-track approach that distributes weight evenly — no adhesive, no heat where it matters. Appropriate for fine-hair and hair-loss clients.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal delay-1">
-        <div class="service-num">05</div>
-        <div class="service-name">Brazilian Blowout</div>
-        <div class="service-desc">Keratin smoothing treatment that eliminates frizz for up to 12 weeks. Formula customized to your hair's current condition. Works on natural hair and extension blends.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal delay-2">
-        <div class="service-num">06</div>
-        <div class="service-name">Custom Color</div>
-        <div class="service-desc">Color built around your skin undertone, lifestyle, and the current health of your strands. Dimensional highlights, rich single-process depth, or a precise shade to blend with extensions.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal">
-        <div class="service-num">07</div>
-        <div class="service-name">Hair Loss Consultations</div>
-        <div class="service-desc">A thorough scalp and density assessment. Cymonne evaluates your pattern, current density, and relevant history — no pressure, no obligation. If she's not the right fit, she'll tell you.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-      <div class="service reveal delay-1">
-        <div class="service-num">08</div>
-        <div class="service-name">Protective Styles</div>
-        <div class="service-desc">Low-manipulation styling that keeps natural hair protected while looking beautiful. Particularly useful for clients managing traction alopecia or breakage.</div>
-        <a href="contact.html" class="service-link">Book</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PROCESS ───────────────────────────────────── -->
-<div class="sec-divider"></div>
-<section class="section sec-ink grain">
-  <div class="container">
-    <div class="sec-head">
-      <div class="sec-head-num reveal">03<span class="slash">/</span>07</div>
-      <div class="sec-head-title reveal delay-1">
-        <span class="label">The Journey</span>
-        <h2 style="margin-top: 20px;">What happens<br>when you <em style="font-style:italic; color:var(--gold);">reach out.</em></h2>
-      </div>
-    </div>
-    <div class="journey-map">
-
-      <!-- ── SVG Roadmap ── -->
-      <div class="journey-road-wrap reveal">
-        <svg class="journey-road-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <!-- Path glow -->
-          <path d="M 0,60 C 80,60 120,60 167,60 C 290,60 370,160 500,160 C 630,160 710,60 833,60 C 890,60 940,60 1000,60"
-                fill="none" stroke="rgba(201,169,110,0.07)" stroke-width="36" stroke-linecap="round"/>
-          <!-- Dashed road -->
-          <path d="M 0,60 C 80,60 120,60 167,60 C 290,60 370,160 500,160 C 630,160 710,60 833,60 C 890,60 940,60 1000,60"
-                fill="none" stroke="rgba(201,169,110,0.22)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="8 5"/>
-          <!-- Center dashes -->
-          <path d="M 0,60 C 80,60 120,60 167,60 C 290,60 370,160 500,160 C 630,160 710,60 833,60 C 890,60 940,60 1000,60"
-                fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="2 16"/>
-          <!-- Start dot -->
-          <circle cx="0" cy="60" r="5" fill="#C9A96E" opacity="0.4"/>
-          <!-- End arrow -->
-          <polyline points="995,56 1003,60 995,64" fill="none" stroke="#C9A96E" stroke-width="1.5" opacity="0.6" stroke-linejoin="round"/>
-          <!-- START / END labels -->
-          <text x="24" y="49" text-anchor="middle" fill="rgba(201,169,110,0.35)" font-family="DM Sans,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2">START</text>
-          <text x="976" y="49" text-anchor="middle" fill="rgba(201,169,110,0.35)" font-family="DM Sans,sans-serif" font-size="7.5" font-weight="600" letter-spacing="2">END</text>
-          <!-- Node 1 (167, 60) -->
-          <circle cx="167" cy="60" r="26" fill="rgba(12,31,42,0.97)" stroke="#C9A96E" stroke-width="1"/>
-          <circle cx="167" cy="60" r="17" fill="none" stroke="rgba(201,169,110,0.22)" stroke-width="0.75"/>
-          <text x="167" y="60" text-anchor="middle" dominant-baseline="central" fill="#C9A96E" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">01</text>
-          <!-- Node 2 (500, 160) -->
-          <circle cx="500" cy="160" r="26" fill="rgba(12,31,42,0.97)" stroke="#C9A96E" stroke-width="1"/>
-          <circle cx="500" cy="160" r="17" fill="none" stroke="rgba(201,169,110,0.22)" stroke-width="0.75"/>
-          <text x="500" y="160" text-anchor="middle" dominant-baseline="central" fill="#C9A96E" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">02</text>
-          <!-- Node 3 (833, 60) -->
-          <circle cx="833" cy="60" r="26" fill="rgba(12,31,42,0.97)" stroke="#C9A96E" stroke-width="1"/>
-          <circle cx="833" cy="60" r="17" fill="none" stroke="rgba(201,169,110,0.22)" stroke-width="0.75"/>
-          <text x="833" y="60" text-anchor="middle" dominant-baseline="central" fill="#C9A96E" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5">03</text>
-          <!-- Connector lines to text columns below -->
-          <line x1="167" y1="86" x2="167" y2="198" stroke="rgba(201,169,110,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
-          <line x1="500" y1="186" x2="500" y2="198" stroke="rgba(201,169,110,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
-          <line x1="833" y1="86" x2="833" y2="198" stroke="rgba(201,169,110,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
-        </svg>
-      </div>
-
-      <!-- ── Text columns ── -->
-      <div class="journey-cols">
-        <div class="jc reveal" data-step="01">
-          <div class="jc-roman" aria-hidden="true">I</div>
-          <h4 class="jc-title">Reach Out</h4>
-          <p>Fill out the contact form, email directly, or DM @cymbolizebeauty. Cymonne personally reads every message and responds herself — no automation, no form letter.</p>
-        </div>
-        <div class="jc reveal delay-1" data-step="02">
-          <div class="jc-roman" aria-hidden="true">II</div>
-          <h4 class="jc-title">Your Consultation</h4>
-          <p>A full scalp and density assessment with no pressure and no obligation. Cymonne evaluates your hair loss pattern, discusses your goals, and explains every solution in plain language.</p>
-        </div>
-        <div class="jc reveal delay-2" data-step="03">
-          <div class="jc-roman" aria-hidden="true">III</div>
-          <h4 class="jc-title">Your Transformation</h4>
-          <p>Most clients leave the same day. Many say they cried — not from distress, but for the first time in a long time, from relief.</p>
-        </div>
-      </div>
-
-    </div>
-    <div style="text-align:center; margin-top:60px; position:relative; z-index:2;">
-      <a href="contact.html" class="btn btn-primary reveal">Start the Conversation</a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── STORY — photo left, text right ──────────────── -->
-<div class="sec-divider on-cream"></div>
-<section class="section sec-cream">
-  <div class="container">
-    <div class="story">
-
-      <!-- Text LEFT -->
-      <div class="reveal-left">
-        <span class="label">The Origin</span>
-        <h2 style="margin:20px 0 28px; color:var(--ink);">It started with<br>her <em style="font-style:italic; color:var(--teal);">grandmother.</em></h2>
-        <p class="lead">"She wore a wig her whole life — not occasionally, but every single day, without exception, in front of everyone she knew."</p>
-        <p>Then one day, a young Cymonne found her sitting alone, crying. Her grandmother was ashamed to remove the wig even in private. She felt like the person she was supposed to be had been taken from her, and no one had given her a way to get it back.</p>
-        <p>Cymonne sat with her in that room and made a silent promise. That promise became her calling — not to style hair, but to give back what hair loss steals from women.</p>
-        <div style="margin-top:32px;">
-          <a href="about.html" class="btn btn-ink">Read Cymonne's Story</a>
-        </div>
-      </div>
-
-      <!-- Photo RIGHT -->
-      <div class="reveal-right">
-        <div class="story-visual grain">
-          <!-- Replace with: <img src="cymonne-portrait-2.jpg" alt="Cymonne in the studio"> -->
-          <div class="story-visual-inner">
-            <div class="mark">C</div>
-            <div class="lbl">Cymonne · Founder</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── STATEMENT (EDITORIAL) ───────────────────── -->
-<section style="background:#0c1f2a; padding:0; position:relative; overflow:hidden;" class="grain">
-
-  <!-- Ghost watermark quote -->
-  <div aria-hidden="true" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-52%); font-family:Georgia,serif; font-style:italic; font-size:min(90vw,780px); line-height:0.8; color:rgba(201,169,110,0.028); pointer-events:none; user-select:none; white-space:nowrap;">“</div>
-
-  <!-- Top rule -->
-  <div style="height:1px; background:linear-gradient(to right, transparent, rgba(201,169,110,0.55) 25%, rgba(201,169,110,0.55) 75%, transparent);"></div>
-
-  <div style="padding:96px 5vw 100px; position:relative; z-index:2; text-align:center;">
-
-    <!-- Eyebrow with diamonds -->
-    <div class="reveal" style="display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:60px;">
-      <div style="width:56px; height:1px; background:linear-gradient(to right, transparent, rgba(201,169,110,0.4));"></div>
-      <svg width="7" height="7" viewBox="0 0 7 7" fill="none"><rect x="0.5" y="0.5" width="6" height="6" transform="rotate(45 3.5 3.5)" stroke="rgba(201,169,110,0.65)" stroke-width="0.75"/></svg>
-      <span style="font-family:var(--f-body); font-size:0.6rem; font-weight:700; letter-spacing:0.32em; text-transform:uppercase; color:rgba(201,169,110,0.55);">Cymonne &nbsp;·&nbsp; Founder &amp; Specialist</span>
-      <svg width="7" height="7" viewBox="0 0 7 7" fill="none"><rect x="0.5" y="0.5" width="6" height="6" transform="rotate(45 3.5 3.5)" stroke="rgba(201,169,110,0.65)" stroke-width="0.75"/></svg>
-      <div style="width:56px; height:1px; background:linear-gradient(to left, transparent, rgba(201,169,110,0.4));"></div>
-    </div>
-
-    <!-- Main quote — oversized editorial type -->
-    <p class="reveal delay-1" style="font-family:var(--f-display); font-style:italic; font-weight:400; font-size:clamp(2.6rem,6.5vw,7rem); line-height:1.12; letter-spacing:-0.025em; color:rgba(250,247,242,0.88); margin:0 0 0.15em;">Most salons weren't built</p>
-    <p class="reveal delay-1" style="font-family:var(--f-display); font-style:italic; font-weight:400; font-size:clamp(2.6rem,6.5vw,7rem); line-height:1.12; letter-spacing:-0.025em; color:rgba(250,247,242,0.88); margin:0 0 0.25em;">for women with hair loss.</p>
-    <p class="reveal delay-2" style="font-family:var(--f-display); font-style:italic; font-weight:400; font-size:clamp(2.6rem,6.5vw,7rem); line-height:1.12; letter-spacing:-0.025em; color:#C9A96E; margin:0;">This one was.</p>
-
-    <!-- Bottom ornament -->
-    <div class="reveal delay-3" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-top:60px;">
-      <div style="width:80px; height:1px; background:linear-gradient(to right, transparent, rgba(201,169,110,0.22));"></div>
-      <svg width="6" height="6" viewBox="0 0 6 6" fill="rgba(201,169,110,0.3)"><rect x="0.4" y="0.4" width="5.2" height="5.2" transform="rotate(45 3 3)"/></svg>
-      <div style="width:80px; height:1px; background:linear-gradient(to left, transparent, rgba(201,169,110,0.22));"></div>
-    </div>
-
-  </div>
-
-  <!-- Bottom rule -->
-  <div style="height:1px; background:linear-gradient(to right, transparent, rgba(201,169,110,0.55) 25%, rgba(201,169,110,0.55) 75%, transparent);"></div>
-
-</section>
-
-<!-- ─── TESTIMONIALS ──────────────────────────────── -->
-<section class="section sec-ink grain">
-  <div class="container">
-    <div class="testimonial">
-      <p class="testimonial-quote reveal">
-        She focused on the health of my natural hair, not just the style. I left with my hair in way better condition than when I came. She took the time to assess my hair and created a plan for us to treat and maintain it going forward.
-      </p>
-      <div class="testimonial-attr reveal delay-1">
-        <span class="testimonial-name">— Miri Pearson</span>
-        <span class="testimonial-meta">Verified Google Review · ★★★★★</span>
-      </div>
-    </div>
-    <hr class="rule" style="margin:64px auto; max-width:400px; opacity:0.12;">
-    <div class="testimonial">
-      <p class="testimonial-quote reveal">
-        Absolutely wonderful experience and stunning results. Mesh Integration due to hair loss — very patient and professional to your personal needs.
-      </p>
-      <div class="testimonial-attr reveal delay-1">
-        <span class="testimonial-name">— Lisa Beard</span>
-        <span class="testimonial-meta">Verified Google Review · ★★★★★</span>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:56px; position:relative; z-index:2;">
-      <a href="https://g.page/r/cymbolizebeauty" target="_blank" rel="noopener" class="btn btn-outline reveal">Read All Google Reviews</a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── STATS BAR ──────────────────────────────────── -->
-<div class="sec-divider on-teal"></div>
-<div class="stats-bar">
-  <div class="stats-grid">
-    <div class="stat reveal">
-      <div class="stat-val">Elevate</div>
-      <div class="stat-lbl">Mesh Integration<br>Certified</div>
-    </div>
-    <div class="stat reveal delay-1">
-      <div class="stat-val">5.0 ★</div>
-      <div class="stat-lbl">Verified Google<br>Reviews</div>
-    </div>
-    <div class="stat reveal delay-2">
-      <div class="stat-val">Same Day</div>
-      <div class="stat-lbl">Most clients leave<br>fully transformed</div>
-    </div>
-    <div class="stat reveal delay-3">
-      <div class="stat-val">24h</div>
-      <div class="stat-lbl">Personal response<br>from Cymonne</div>
-    </div>
-  </div>
-</div>
-
-<!-- ─── EDUCATION ─────────────────────────────────── -->
-<div class="sec-divider on-cream"></div>
-<section class="section sec-cream">
-  <div class="container">
-    <div class="two-col reverse">
-      <div class="reveal-right">
-        <span class="label">For Stylists &amp; Students</span>
-        <h2 style="margin:20px 0 20px; color:var(--ink);">Elevate Mesh &amp;<br><em style="font-style:italic; color:var(--teal);">Meshless</em> Integration.</h2>
-        <p style="color:var(--text-mid);">Cymonne's education program trains the next generation of stylists to confidently serve the clients most salons can't help. Hands-on technique, the psychology of working with women experiencing hair loss, and the full business side of building a specialty practice.</p>
-        <ul class="edu-list">
-          <li>In-person Las Vegas studio · virtual · Cymonne travels to you</li>
-          <li>1-on-1 mentorship and group classes available</li>
-          <li>Open to new cosmetologists, licensed stylists, and beauty students</li>
-          <li>Includes technique, client consultation, assessment, and pricing strategy</li>
+      <div class="hm-edu-text reveal-right">
+        <span class="hm-label">Education</span>
+        <h2 class="hm-h2">Elevate Mesh &amp; Meshless Integration.</h2>
+        <p>Cymonne trains stylists to confidently install Mesh Integration on hair loss clients, price their services correctly, and handle the emotional side of working with women experiencing hair loss.</p>
+        <ul class="hm-edu-list">
+          <li>Covers Mesh Integration, Invisible Bead Wefts, Sew-In methods, consultations, and client assessment</li>
+          <li>In-person at the Las Vegas studio, virtual, or Cymonne travels to you</li>
+          <li>Group classes and 1-on-1 mentorship</li>
+          <li>For new cosmetologists, licensed stylists, and beauty school students</li>
         </ul>
-        <div style="margin-top:32px;">
-          <a href="education.html" class="btn btn-ink">Explore the Program</a>
-        </div>
-      </div>
-      <div class="reveal-left">
-        <div class="visual grain">
-          <!-- Replace with: <img src="education-class.jpg" alt="Cymonne teaching Mesh Integration"> -->
-          <div class="visual-inner">
-            <div class="mark">E</div>
-            <div class="cap">Education &amp; Training</div>
-          </div>
-        </div>
+        <a href="education.html" class="hm-btn hm-btn-ink">Explore the Program</a>
       </div>
     </div>
   </div>
@@ -528,5 +351,20 @@
 <div class="cur-dot" id="curDot"></div>
 <div class="cur-ring" id="curRing"></div>
 <script src="main.js"></script>
+<script>
+(function () {
+  var els = document.querySelectorAll('[data-inview]');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (e) { e.classList.add('in-view'); });
+    return;
+  }
+  var o = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); o.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  els.forEach(function (e) { o.observe(e); });
+})();
+</script>
 </body>
 </html>
