@@ -2485,3 +2485,12 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   margin: 0;
 }
 .policy-item strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   Blue accent for nav (2026-08-14)
+   ============================================================ */
+:root { --blue-lt: #7FB0CB; }
+.nav-links a:not(.btn):hover,
+.nav-links a.active { color: var(--blue-lt); }
+.nav-links a:not(.btn)::before { background: var(--blue-lt); }
+.mobile-menu a:not(.btn):hover { color: var(--blue-lt); }
