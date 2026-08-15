@@ -117,3 +117,21 @@ function initContactForm() {
 document.querySelectorAll('a[href="#book"]').forEach(l => {
   l.addEventListener('click', e => { e.preventDefault(); window.location.href = 'contact.html'; });
 });
+
+// ── QUOTE BANNER — scroll-triggered word reveal ────────────────────
+(function () {
+  var sec = document.getElementById('quote-banner');
+  if (!sec) return;
+  var words   = sec.querySelectorAll('.qb-word');
+  var eyebrow = sec.querySelector('.qb-eyebrow');
+  var attr    = sec.querySelector('.qb-attr');
+  var obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      if (eyebrow) eyebrow.classList.add('qb-revealed');
+      words.forEach(function (w) { w.classList.add('qb-revealed'); });
+      if (attr) attr.classList.add('qb-revealed');
+      obs.disconnect();
+    }
+  }, { threshold: 0.28 });
+  obs.observe(sec);
+})();

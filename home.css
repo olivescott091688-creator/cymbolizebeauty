@@ -904,3 +904,88 @@
 @media (max-width: 980px) {
   .hm-journey-step::before { display: none; }
 }
+
+/* ── QUOTE BANNER ────────────────────────────────────────────── */
+.qb-section {
+  position: relative;
+  min-height: 60vh;
+  background: url('roses-banner.jpg') center / cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.qb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 18, 22, 0.80);
+}
+.qb-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: clamp(80px, 10vw, 130px) clamp(24px, 8vw, 100px);
+  max-width: 940px;
+}
+.qb-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 40px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.qb-eyebrow.qb-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.qb-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.qb-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(46px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--qi) * 85ms),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--qi) * 85ms);
+  margin-right: 0.25em;
+}
+.qb-word:last-child { margin-right: 0; }
+.qb-word.qb-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.qb-gold { color: var(--gold); }
+.qb-br {
+  display: block;
+  height: 0.18em;
+}
+.qb-attr {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(201, 169, 110, 0.5);
+  margin-top: 44px;
+  opacity: 0;
+  transition: opacity 1s ease calc(10 * 85ms + 300ms);
+}
+.qb-attr.qb-revealed { opacity: 1; }
+
+@media (max-width: 640px) {
+  /* CSS fixed parallax is disabled on iOS — fall back to scroll */
+  .qb-section { background-attachment: scroll; min-height: 50vh; }
+}
