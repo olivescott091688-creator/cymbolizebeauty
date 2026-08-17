@@ -116,6 +116,16 @@
   margin: 0 auto;
   padding: 0 var(--hm-pad-x) 64px;
 }
+.hm-hero-logo {
+  height: 210px;
+  width: auto;
+  display: block;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .hm-hero-logo { height: 160px; margin-bottom: 16px; }
+}
 .hm-hero-eyebrow {
   font-family: var(--hm-body);
   font-size: 0.62rem;
@@ -910,7 +920,7 @@
   position: relative;
   min-height: 60vh;
   background: url('roses-banner.jpg') center / cover no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* fixed kills mobile — scroll only */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -919,15 +929,40 @@
 .qb-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(6, 18, 22, 0.80);
+  background: rgb(6, 18, 22); /* solid — JS animates opacity (GPU composited, no repaint) */
+  will-change: opacity;
+}
+.qb-ghost-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14rem, 28vw, 22rem);
+  line-height: 1;
+  color: rgba(201, 169, 110, 0.07);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
 }
 .qb-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
-  padding: clamp(80px, 10vw, 130px) clamp(24px, 8vw, 100px);
-  max-width: 940px;
+  padding: clamp(72px, 9vw, 110px) clamp(24px, 8vw, 100px);
+  max-width: 860px;
 }
+.qb-rule-top,
+.qb-rule-bottom {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  opacity: 0;
+  /* scroll-controlled */
+}
+.qb-rule-top  { margin-bottom: 28px; }
+.qb-rule-bottom { margin-top: 28px; }
 .qb-eyebrow {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.7rem;
@@ -936,12 +971,7 @@
   color: var(--gold);
   margin: 0 0 40px;
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-.qb-eyebrow.qb-revealed {
-  opacity: 1;
-  transform: translateY(0);
+  transition: opacity 0.2s ease;
 }
 .qb-quote {
   font-family: 'Cormorant Garamond', serif;
@@ -953,20 +983,17 @@
   letter-spacing: -0.01em;
   margin: 0;
 }
+.qb-line {
+  display: block;
+  margin-bottom: 0.05em;
+}
 .qb-word {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(46px);
-  transition:
-    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--qi) * 85ms),
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--qi) * 85ms);
   margin-right: 0.25em;
+  opacity: 0.12; /* dim start; JS brightens line-by-line L→R */
+  will-change: opacity;
 }
 .qb-word:last-child { margin-right: 0; }
-.qb-word.qb-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
 .qb-gold { color: var(--gold); }
 .qb-br {
   display: block;
@@ -981,11 +1008,90 @@
   color: rgba(201, 169, 110, 0.5);
   margin-top: 44px;
   opacity: 0;
-  transition: opacity 1s ease calc(10 * 85ms + 300ms);
+  transition: opacity 0.25s ease;
 }
-.qb-attr.qb-revealed { opacity: 1; }
 
 @media (max-width: 640px) {
-  /* CSS fixed parallax is disabled on iOS — fall back to scroll */
-  .qb-section { background-attachment: scroll; min-height: 50vh; }
+  .qb-section { min-height: 50vh; }
+  /* center the Meet Cymonne button on mobile */
+  .hm-about-text .hm-btn { display: block; text-align: center; }
+}
+
+/* ============================================================
+   v6 — HERO OVERHAUL: left-anchored, asymmetric, editorial
+   ============================================================ */
+
+/* Kill the duplicate logo — nav has it */
+.hm-hero-logo { display: none; }
+
+/* Override v5.1 centered layout */
+.hm-hero-content {
+  align-items: flex-start;
+  text-align: left;
+  padding-bottom: clamp(56px, 7vh, 96px);
+  max-width: 620px;
+}
+.hm-hero-h1 {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: clamp(3.2rem, 6.4vw, 6rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+}
+.hm-hero-eyebrow {
+  color: var(--gold); /* override the blue from v5.4 */
+  margin-bottom: 20px;
+}
+.hm-hero-actions {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 36px;
+}
+
+/* Veil: left-heavy, lets the photo breathe on the right */
+.hm-hero-veil {
+  background:
+    linear-gradient(108deg, rgba(12,31,42,0.92) 0%, rgba(12,31,42,0.58) 36%, rgba(12,31,42,0.14) 62%, transparent 82%),
+    linear-gradient(to top, rgba(12,31,42,0.97) 0%, rgba(12,31,42,0.68) 22%, rgba(12,31,42,0.24) 52%, rgba(12,31,42,0.06) 100%);
+}
+
+/* Thin gold rule between headline and CTAs */
+.hm-hero-divider {
+  width: 44px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.65;
+  margin: 34px 0;
+  animation: hmRise 0.9s cubic-bezier(.19,1,.22,1) 0.38s both;
+}
+
+/* Text-link secondary CTA (editorial, not a button) */
+.hm-hero-link {
+  font-family: var(--hm-body);
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.52);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(250,247,242,0.18);
+  padding-bottom: 4px;
+  transition: color 0.25s, border-color 0.25s;
+  animation: hmRise 0.9s cubic-bezier(.19,1,.22,1) 0.52s both;
+}
+.hm-hero-link span { font-size: 0.9rem; letter-spacing: 0; }
+.hm-hero-link:hover { color: var(--gold); border-color: rgba(201,169,110,0.45); }
+
+@media (max-width: 640px) {
+  .hm-hero-content { max-width: 100%; }
+  .hm-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .hm-hero-actions .hm-btn { text-align: center; width: auto; flex: none; }
 }

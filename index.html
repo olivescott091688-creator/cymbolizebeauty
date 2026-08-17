@@ -8,15 +8,15 @@
   <link rel="canonical" href="https://cymbolizebeauty.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260814b" />
-  <link rel="stylesheet" href="home.css?v=20260814b" />
+  <link rel="stylesheet" href="styles.css?v=20260817a" />
+  <link rel="stylesheet" href="home.css?v=20260817a" />
 </head>
 <body>
 
 <!-- ─── NAVBAR ─────────────────────────────────── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Cymbolize<em>Beauty</em></a>
+    <a href="index.html" class="nav-logo"><img src="logo.webp" alt="CymbolizeBeauty" class="nav-logo-img"></a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -63,10 +63,11 @@
   <div class="hm-hero-veil" aria-hidden="true"></div>
   <div class="hm-hero-content">
     <p class="hm-hero-eyebrow">Hair Loss Specialist &mdash; Las Vegas</p>
-    <h1 class="hm-hero-h1">The specialist your hair<br>has been waiting for.</h1>
+    <h1 class="hm-hero-h1">The specialist<br>your hair has been<br>waiting for.</h1>
+    <div class="hm-hero-divider" aria-hidden="true"></div>
     <div class="hm-hero-actions">
       <a href="contact.html" class="hm-btn hm-btn-teal">Book a Consultation</a>
-      <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" class="hm-btn hm-btn-ghost">DM on Instagram</a>
+      <a href="services.html" class="hm-hero-link">All Services <span aria-hidden="true">↗</span></a>
     </div>
   </div>
   <div class="hm-hero-bar">
@@ -83,8 +84,7 @@
   <div class="hm-wrap">
     <div class="hm-about-grid">
       <div class="hm-portrait reveal-left">
-        <!-- Replace with: <img src="cymonne-portrait.jpg" alt="Cymonne, founder of CymbolizeBeauty"> -->
-        <span class="hm-portrait-cap">Cymonne · Founder</span>
+        <img src="cymonne-portrait.jpg" alt="Cymonne, founder of CymbolizeBeauty" style="object-position:top center;">
       </div>
       <div class="hm-about-text reveal-right">
         <span class="hm-label">The Founder</span>
@@ -280,22 +280,35 @@
 <!-- ─── QUOTE BANNER ────────────────────────────── -->
 <section class="qb-section" id="quote-banner">
   <div class="qb-overlay"></div>
+  <div class="qb-ghost-mark" aria-hidden="true">“</div>
   <div class="qb-content">
-    <p class="qb-eyebrow">CymbolizeBeauty</p>
+    <div class="qb-rule qb-rule-top"></div>
+    <p class="qb-eyebrow">Her Mission</p>
     <h2 class="qb-quote">
-      <span class="qb-word" style="--qi:0">The</span>
-      <span class="qb-word" style="--qi:1">woman</span>
-      <span class="qb-word" style="--qi:2">hair</span>
-      <span class="qb-word" style="--qi:3">loss</span>
-      <span class="qb-word" style="--qi:4">tried</span>
-      <span class="qb-word" style="--qi:5">to</span>
-      <span class="qb-word" style="--qi:6">erase&thinsp;—</span>
-      <span class="qb-br" aria-hidden="true"></span>
-      <span class="qb-word qb-gold" style="--qi:7">she's</span>
-      <span class="qb-word qb-gold" style="--qi:8">still</span>
-      <span class="qb-word qb-gold" style="--qi:9">there.</span>
+      <span class="qb-line">
+        <span class="qb-word">To</span>
+        <span class="qb-word">hand</span>
+        <span class="qb-word">a</span>
+        <span class="qb-word">woman</span>
+        <span class="qb-word">back</span>
+      </span>
+      <span class="qb-line">
+        <span class="qb-word">the</span>
+        <span class="qb-word">version</span>
+        <span class="qb-word">of</span>
+        <span class="qb-word">herself</span>
+      </span>
+      <span class="qb-line">
+        <span class="qb-word">that</span>
+        <span class="qb-word">hair</span>
+        <span class="qb-word">loss</span>
+        <span class="qb-word">tried</span>
+        <span class="qb-word">to</span>
+        <span class="qb-word qb-gold">erase.</span>
+      </span>
     </h2>
-    <span class="qb-attr">— cymbolizebeauty</span>
+    <span class="qb-attr">Cymonne</span>
+    <div class="qb-rule qb-rule-bottom"></div>
   </div>
 </section>
 
@@ -346,8 +359,7 @@
         </div>
       </div>
       <div class="hm-portrait reveal-right">
-        <!-- Replace with: <img src="cymonne-portrait-2.jpg" alt="Cymonne in the studio"> -->
-        <span class="hm-portrait-cap">Studio Portrait</span>
+        <img src="cymonne-teaching.jpg" alt="Cymonne teaching Mesh Integration" style="object-position:center center;">
       </div>
     </div>
   </div>
@@ -501,7 +513,7 @@
 
 <div class="cur-dot" id="curDot"></div>
 <div class="cur-ring" id="curRing"></div>
-<script src="main.js?v=20260814b"></script>
+<script src="main.js?v=20260817a"></script>
 <script>
 (function () {
   var els = document.querySelectorAll('[data-inview]');

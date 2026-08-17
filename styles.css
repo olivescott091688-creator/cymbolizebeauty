@@ -247,21 +247,24 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0;
+  padding: 14px 0;
   transition: padding var(--t);
 }
-#navbar.scrolled .nav-inner { padding: 18px 0; }
+#navbar.scrolled .nav-inner { padding: 10px 0; }
 
 .nav-logo {
-  font-family: var(--f-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: var(--cream);
-  letter-spacing: -0.02em;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
-.nav-logo em { color: var(--gold); font-style: italic; }
+.nav-logo-img {
+  height: 120px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: height var(--t);
+}
+#navbar.scrolled .nav-logo-img { height: 96px; }
 
 .nav-links {
   display: flex;
@@ -2500,12 +2503,15 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: clamp(96px, 14vh, 140px) 32px 40px;
+  padding: clamp(88px, 12vh, 130px) 32px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
+.mm-eyebrow { margin-top: auto; }
+.mm-foot { margin-bottom: auto; }
 .mm-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -2604,7 +2610,7 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: clamp(28px, 5vh, 48px);
+  margin-top: clamp(28px, 5vh, 48px) !important;
   padding-top: 22px;
   border-top: 1px solid rgba(201,169,110,0.13);
   font-family: var(--f-body);

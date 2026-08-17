@@ -118,20 +118,70 @@ document.querySelectorAll('a[href="#book"]').forEach(l => {
   l.addEventListener('click', e => { e.preventDefault(); window.location.href = 'contact.html'; });
 });
 
-// ── QUOTE BANNER — scroll-triggered word reveal ────────────────────
+// ── QUOTE BANNER — line-by-line L→R reveal ────────────────────
 (function () {
   var sec = document.getElementById('quote-banner');
   if (!sec) return;
-  var words   = sec.querySelectorAll('.qb-word');
+
+  var lines   = Array.from(sec.querySelectorAll('.qb-line'));
+  var overlay = sec.querySelector('.qb-overlay');
   var eyebrow = sec.querySelector('.qb-eyebrow');
   var attr    = sec.querySelector('.qb-attr');
-  var obs = new IntersectionObserver(function (entries) {
-    if (entries[0].isIntersecting) {
-      if (eyebrow) eyebrow.classList.add('qb-revealed');
-      words.forEach(function (w) { w.classList.add('qb-revealed'); });
-      if (attr) attr.classList.add('qb-revealed');
-      obs.disconnect();
-    }
-  }, { threshold: 0.28 });
-  obs.observe(sec);
+  var ticking = false;
+
+  // cache words per line once at init
+  var lineWords = lines.map(function (l) {
+    return Array.from(l.querySelectorAll('.qb-word'));
+  });
+
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+  function update() {
+    var rect = sec.getBoundingClientRect();
+    var winH = window.innerHeight;
+    // animation runs while section is actively on screen
+    var p = clamp((winH * 0.88 - rect.top) / (winH * 0.76), 0, 1);
+
+    // overlay lifts: GPU opacity only, no repaint
+    if (overlay) overlay.style.opacity = (0.94 - p * 0.30).toFixed(3);
+
+    // eyebrow + rules
+    if (eyebrow) eyebrow.style.opacity = clamp(p * 5, 0, 1).toFixed(3);
+    sec.querySelectorAll('.qb-rule-top,.qb-rule-bottom').forEach(function (r) {
+      r.style.opacity = clamp(p * 6, 0, 1).toFixed(3);
+    });
+
+    // Line-by-line L→R reveal
+    // Each line gets an equal band of scroll progress.
+    // Within each band, words stagger left→right so the last word of
+    // line N finishes exactly when the first word of line N+1 starts.
+    var WINDOW   = 0.08;   // scroll range for one word to go dim→full
+    var P_START  = 0.06;   // when line 1 word 1 begins
+    var P_TOTAL  = 0.84;   // total scroll range for all lines
+    var nLines   = lineWords.length;
+    var bandPer  = P_TOTAL / nLines;
+
+    lineWords.forEach(function (words, li) {
+      var ls  = P_START + li * bandPer;
+      var nW  = words.length;
+      var stagger = nW > 1 ? (bandPer - WINDOW) / (nW - 1) : 0;
+      words.forEach(function (w, wi) {
+        var wStart = ls + wi * stagger;
+        var wp = clamp((p - wStart) / WINDOW, 0, 1);
+        w.style.opacity = (0.12 + wp * 0.88).toFixed(3);
+      });
+    });
+
+    // attribution appears after all lines done
+    if (attr) attr.style.opacity = clamp((p - 0.92) / 0.07, 0, 1).toFixed(3) * 0.55;
+
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  update();
 })();
