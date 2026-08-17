@@ -1066,3 +1066,214 @@
   .mx-soc-card:last-child { display: none; }
   .mx-frame-offset { top: -10px; left: -10px; right: 10px; bottom: 10px; }
 }
+
+/* ============================================================
+   SYSTEM v8 — type reset. Kills the italic-serif/gold-accent
+   combo page-wide. Display: Fraunces (hero-approved).
+   Body/labels: DM Sans. Gold = hairlines + stars only.
+   ============================================================ */
+
+/* --- section markers: tracked sans index, not italic serif --- */
+.mx-marker {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.38);
+}
+.mx-cream .mx-marker,
+.rv-section .mx-marker { color: rgba(12,31,42,0.4); }
+
+/* --- headlines: Fraunces roman, no gold italic words --- */
+.mx-h2, .sv-headline, .ct-h2, .sv-sig-name, .fa-handle,
+.mx-story-open, .rv-text, .rv-score-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 320;
+  font-style: normal;
+}
+.mx-h2 em, .sv-headline em, .ct-h2 em, .sv-sig-name em, .fa-handle em {
+  font-style: italic;
+  color: inherit;
+}
+.fa-handle:hover em { color: inherit; }
+
+/* --- kill drop caps --- */
+.mx-dropcap::first-letter, .mx-dropcap-gold::first-letter {
+  font-family: inherit;
+  font-size: 1em;
+  float: none;
+  padding: 0;
+  color: inherit;
+  line-height: inherit;
+}
+
+/* --- kill ghost ornaments --- */
+.mx-story-ghost { display: none; }
+
+/* --- services --- */
+.sv-cat-name {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.64rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.42);
+}
+.sv-row-name { font-family: 'Fraunces', Georgia, serif; font-weight: 360; font-size: 1.3rem; }
+.sv-row-price, .sv-sig-price {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: rgba(250,247,242,0.66);
+}
+.sv-sig-price { font-size: 0.9rem; margin-top: 2px; }
+.sv-sig-label {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.85);
+}
+.sv-intro em, .sv-sig-note {
+  font-family: var(--f-body) !important;
+  font-style: normal !important;
+  font-size: 0.97rem !important;
+  color: rgba(250,247,242,0.72) !important;
+}
+.sv-sig-note em { font-style: italic; color: inherit; }
+
+/* --- reviews --- */
+.rv-text { font-size: clamp(1.45rem,2.5vw,2.05rem); line-height: 1.45; letter-spacing: -0.01em; }
+.rv-text::before { content: none; }
+.rv-head-right {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(12,31,42,0.35);
+}
+.rv-name { font-family: var(--f-body); font-style: normal; font-weight: 600; font-size: 0.88rem; }
+.rv-score-label { font-family: var(--f-body); font-style: normal; font-size: 0.85rem; color: rgba(12,31,42,0.45); }
+
+/* --- follow along --- */
+.fa-desc {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  color: rgba(250,247,242,0.45);
+}
+.fa-row-name { font-family: 'Fraunces', Georgia, serif; font-weight: 360; }
+
+/* --- founder / who / process / education --- */
+.mx-cred-line span {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--teal);
+  font-weight: 500;
+}
+.mx-frame-cap {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+}
+.mx-frame-cap em { font-family: inherit; font-style: normal; font-weight: 600; color: var(--ink); font-size: 1em; }
+.mx-frame-cap-light em { color: rgba(250,247,242,0.85); }
+.mx-who-note {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(250,247,242,0.55);
+}
+.mx-who-num {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: rgba(201,169,110,0.6);
+}
+.mx-who-item h3, .mx-step h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; }
+.mx-step-ghost {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: normal;
+  font-size: 6.4rem;
+  color: rgba(22,56,72,0.08);
+}
+.mx-edu-num {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: rgba(201,169,110,0.7);
+}
+
+/* --- story --- */
+.mx-story-open { font-size: clamp(1.7rem,3.2vw,2.7rem); line-height: 1.35; }
+
+/* --- quote banner: same words, new type --- */
+.qb-quote { font-family: 'Fraunces', Georgia, serif; font-weight: 320; font-style: normal; }
+.qb-eyebrow {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.8);
+}
+.qb-attr {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.5);
+}
+.qb-ghost-mark { display: none; }
+
+/* --- CTA: solid button like the approved hero --- */
+.ct-pull {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: normal;
+  font-weight: 340;
+  font-size: clamp(1.05rem,1.7vw,1.4rem);
+  line-height: 1.6;
+}
+.ct-attr {
+  font-family: var(--f-body);
+  color: rgba(250,247,242,0.32);
+}
+.ct-btn {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--teal);
+  color: var(--cream);
+  padding: 19px 44px;
+  border: none;
+  border-bottom: none;
+  transition: background 0.25s;
+}
+.ct-btn:hover { background: var(--teal-2); color: var(--cream); }
+.ct-rating {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
