@@ -870,90 +870,84 @@
 }
 
 /* ============================================================
-   N° 08 — SOCIAL (ink)
+   N° 08 — FOLLOW ALONG (typographic band, no cards)
    ============================================================ */
-.mx-soc-grid {
-  display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: clamp(48px, 7vw, 100px);
-  align-items: center;
+.fa-section {
+  background: var(--ink);
+  color: var(--cream);
+  padding: clamp(88px,11vw,140px) clamp(28px,5vw,72px);
+  overflow: hidden;
 }
-.mx-soc-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  align-items: end;
-}
-.mx-soc-card {
-  border: 1px solid rgba(201,169,110,0.15);
-  background: rgba(22,56,72,0.35);
-}
-.mx-soc-card-2 { margin-bottom: -42px; }
-.mx-soc-img {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(155deg, rgba(22,56,72,0.92) 0%, rgba(12,31,42,0.65) 100%);
-  position: relative;
-}
-.mx-soc-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(201%2C169%2C110%2C0.2)' stroke-width='1.2'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") center/22px no-repeat;
-}
-.mx-soc-meta {
-  padding: 12px 14px;
-  border-top: 1px solid rgba(201,169,110,0.1);
-}
-.mx-soc-meta em {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.02rem;
-  color: rgba(201,169,110,0.75);
-}
-.mx-soc-handle {
+.fa-inner { max-width: 1240px; margin: 0 auto; }
+.fa-handle {
+  display: block;
   font-family: var(--f-display);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.8rem, 8.5vw, 7.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   color: var(--cream);
-  margin: 0 0 22px;
-}
-.mx-soc-handle em { color: var(--gold); }
-.mx-soc-desc {
-  font-family: var(--f-body);
-  font-size: 0.96rem;
-  line-height: 1.8;
-  color: rgba(250,247,242,0.5);
-  margin-bottom: 34px;
-}
-.mx-soc-links { border-top: 1px solid rgba(201,169,110,0.15); }
-.mx-soc-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(201,169,110,0.15);
-  font-family: var(--f-body);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(250,247,242,0.5);
   text-decoration: none;
+  margin: 18px 0 20px;
+  transition: color 0.35s;
+}
+.fa-handle em { font-style: italic; color: var(--gold); transition: color 0.35s; }
+.fa-handle:hover { color: var(--gold); }
+.fa-handle:hover em { color: var(--cream); }
+.fa-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: rgba(250,247,242,0.45);
+  margin: 0 0 clamp(44px,5.5vw,64px);
+}
+.fa-links { border-top: 1px solid rgba(201,169,110,0.2); }
+.fa-row {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(20px,4vw,48px);
+  padding: clamp(24px,3vw,34px) 0;
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+  text-decoration: none;
+  position: relative;
+  transition: padding-left 0.35s cubic-bezier(.19,1,.22,1);
+}
+.fa-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleY(0.5);
+  transform-origin: top;
+  transition: opacity 0.3s, transform 0.35s cubic-bezier(.19,1,.22,1);
+}
+.fa-row:hover { padding-left: 20px; }
+.fa-row:hover::before { opacity: 1; transform: scaleY(1); }
+.fa-row-name {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem,2.4vw,2.1rem);
+  color: var(--cream);
   transition: color 0.25s;
+  flex: none;
 }
-.mx-soc-link svg { opacity: 0.5; flex: none; transition: opacity 0.25s; }
-.mx-soc-arr {
-  margin-left: auto;
-  font-size: 0.9rem;
-  letter-spacing: 0;
-  opacity: 0.4;
-  transition: opacity 0.25s, transform 0.3s cubic-bezier(.19,1,.22,1);
+.fa-row:hover .fa-row-name { color: var(--gold); }
+.fa-row-note {
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  color: rgba(250,247,242,0.4);
+  flex: 1;
 }
-.mx-soc-link:hover { color: var(--gold); }
-.mx-soc-link:hover svg, .mx-soc-link:hover .mx-soc-arr { opacity: 1; }
-.mx-soc-link:hover .mx-soc-arr { transform: translate(3px, -3px); }
+.fa-row-arr {
+  font-size: 1.1rem;
+  color: rgba(201,169,110,0.35);
+  flex: none;
+  transition: color 0.25s, transform 0.3s cubic-bezier(.19,1,.22,1);
+}
+.fa-row:hover .fa-row-arr { color: var(--gold); transform: translate(4px,-4px); }
 
 /* ============================================================
    CTA — centered editorial, no columns, no ornaments
