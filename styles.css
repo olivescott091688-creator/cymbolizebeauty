@@ -2646,20 +2646,175 @@ p  { font-size: 1.05rem; line-height: 1.82; }
 }
 
 /* =================================================================
-   SOCIAL v2 — editorial split layout
+   SOCIAL v2 — 3 editorial post cards + stats column
 ================================================================= */
 .sb2 {
   background: var(--ink-2);
   padding: clamp(80px, 10vw, 130px) clamp(24px, 5vw, 64px);
   overflow: hidden;
 }
-.sb2-inner {
+.sb2-wrap {
   max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: clamp(56px, 8vw, 110px);
+  grid-template-columns: 1fr 400px;
+  gap: clamp(56px, 7vw, 96px);
   align-items: center;
+}
+
+/* — Post cards — */
+.sb2-left {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: end;
+}
+.sb2-card {
+  background: rgba(22,56,72,0.45);
+  border: 1px solid rgba(201,169,110,0.13);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sb2-card-pushed { margin-bottom: -44px; }
+.sb2-card-img {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(155deg, rgba(22,56,72,0.95) 0%, rgba(12,31,42,0.7) 100%);
+  position: relative;
+}
+.sb2-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(201%2C169%2C110%2C0.18)' stroke-width='1.2'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") center/24px no-repeat;
+}
+.sb2-card-meta {
+  padding: 11px 13px;
+  border-top: 1px solid rgba(201,169,110,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sb2-card-acct {
+  font-family: var(--f-body);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.6);
+}
+.sb2-card-tag {
+  font-family: var(--f-body);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.26);
+}
+
+/* — Right text column — */
+.sb2-right { }
+.sb2-top-rule {
+  width: 40px;
+  height: 1px;
+  background: rgba(201,169,110,0.38);
+  margin-bottom: 26px;
+}
+.sb2-handle {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--cream);
+  margin: 0 0 32px;
+}
+.sb2-handle em { color: var(--gold); font-style: italic; }
+
+/* Stats row */
+.sb2-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(201,169,110,0.12);
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+  margin-bottom: 28px;
+}
+.sb2-stat {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sb2-stat + .sb2-stat {
+  border-left: 1px solid rgba(201,169,110,0.12);
+  padding-left: 14px;
+}
+.sb2-stat strong {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.sb2-stat span {
+  font-family: var(--f-body);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.32);
+}
+.sb2-desc {
+  font-family: var(--f-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: rgba(250,247,242,0.46);
+  margin-bottom: 28px;
+}
+.sb2-links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(201,169,110,0.12);
+}
+.sb2-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: var(--f-body);
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.44);
+  text-decoration: none;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+  transition: color 0.25s;
+}
+.sb2-link svg { opacity: 0.48; flex: none; transition: opacity 0.25s; }
+.sb2-arr {
+  margin-left: auto;
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  opacity: 0.42;
+  transition: opacity 0.25s, transform 0.3s;
+}
+.sb2-link:hover { color: var(--gold); }
+.sb2-link:hover svg, .sb2-link:hover .sb2-arr { opacity: 1; }
+.sb2-link:hover .sb2-arr { transform: translate(3px,-3px); }
+
+@media (max-width: 960px) {
+  .sb2-wrap { grid-template-columns: 1fr; gap: 56px; }
+  .sb2-left { order: 2; }
+  .sb2-right { order: 1; }
+  .sb2-card-pushed { margin-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .sb2-left { grid-template-columns: repeat(2, 1fr); }
+  .sb2-card:last-child { display: none; }
+  .sb2-card-pushed { margin-bottom: 0; }
 }
 .sb2-handle {
   font-family: var(--f-display);
@@ -2873,4 +3028,61 @@ a.cta-v2-foot-item:hover { color: rgba(201,169,110,0.55); }
   .cta-v2-foot { gap: 14px; }
   .cta-v2-btns { align-items: stretch; }
   .cta-v2-btns .btn { text-align: center; }
+}
+
+/* — Pull quote (left column, below headline) — */
+.cta-v2-pull {
+  margin: 40px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid rgba(201,169,110,0.15);
+}
+.cta-v2-pull p {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.55vw, 1.28rem);
+  line-height: 1.72;
+  color: rgba(250,247,242,0.58);
+  margin: 0 0 14px;
+}
+.cta-v2-pull cite {
+  font-family: var(--f-body);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.5);
+  font-style: normal;
+}
+
+/* — Google rating (top of right column) — */
+.cta-v2-rating {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(201,169,110,0.14);
+}
+.cta-v2-score {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(3.8rem, 5.5vw, 5.2rem);
+  line-height: 0.9;
+  color: var(--cream);
+  letter-spacing: -0.04em;
+}
+.cta-v2-rating-detail { display: flex; flex-direction: column; gap: 7px; }
+.cta-v2-stars {
+  color: var(--gold);
+  font-size: 0.88rem;
+  letter-spacing: 4px;
+}
+.cta-v2-rating-label {
+  font-family: var(--f-body);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.3);
 }
