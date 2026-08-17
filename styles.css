@@ -1633,20 +1633,12 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   /* Section headings */
   .sec-head { gap: 16px; margin-bottom: 36px; }
   .sec-head-num { display: none; }
-  .sec-head-title h2 {
-    border-left: 3px solid var(--gold);
-    padding-left: 20px;
-    margin-top: 16px;
-  }
-  .sec-cream .sec-head-title h2 { border-left-color: var(--teal); }
-  .sec-teal .sec-head-title h2 { border-left-color: var(--gold); }
+  .sec-head-title h2 { margin-top: 16px; }
 
   /* Page hero inner pages */
-  .page-hero { padding: 120px 20px 52px; }
+  .page-hero { padding: 180px 20px 56px; }
   .page-hero h1 {
     font-size: clamp(2rem, 8vw, 2.8rem);
-    border-left: 3px solid var(--gold);
-    padding-left: 20px;
     margin-bottom: 20px;
   }
   .page-hero-eyebrow { margin-bottom: 24px; }
