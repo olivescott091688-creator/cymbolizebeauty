@@ -3088,3 +3088,253 @@ a.cta-v2-foot-item:hover { color: rgba(201,169,110,0.55); }
   text-transform: uppercase;
   color: rgba(250,247,242,0.3);
 }
+
+/* ============================================================
+   SYSTEM v8 — INNER PAGES layer.
+   Propagates the homepage v8 language to every shared
+   inner-page component. Fraunces roman display, tracked
+   sans markers, gold demoted to hairlines + stars.
+   ============================================================ */
+
+/* --- page hero --- */
+.page-hero h1 {
+  font-style: normal;
+  font-weight: 340;
+  letter-spacing: -0.028em;
+}
+.page-hero h1 em { font-style: italic; color: inherit; }
+.page-hero-eyebrow .num {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.65);
+}
+.page-hero-eyebrow .label-txt {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: rgba(250,247,242,0.38);
+}
+.page-hero-eyebrow .line { background: rgba(250,247,242,0.12); max-width: 110px; }
+
+/* --- labels on cream: muted ink, not teal --- */
+.sec-cream .label { color: rgba(12,31,42,0.4); }
+.sec-cream .label::before { background: rgba(12,31,42,0.25); }
+
+/* --- section heads: kill the 4rem italic gold index --- */
+.sec-head { align-items: end; grid-template-columns: 120px 1fr; }
+.sec-head-num {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.32);
+  opacity: 1;
+  padding-bottom: 10px;
+}
+.sec-head-num .slash { opacity: 0.5; margin: 0 4px; }
+.sec-cream .sec-head-num { color: rgba(12,31,42,0.32); }
+.sec-head-title h2 { font-style: normal; font-weight: 340; line-height: 1.08; }
+
+/* --- headline accents inherit, never gold/teal --- */
+h1 em, h2 em, h3 em, h4 em { font-style: italic; color: inherit; }
+.sec-cream .display-italic em { color: inherit; }
+.cta h2 em, .page-hero h1 em, .social-block h3 em { color: inherit; }
+
+/* --- generic heading weight on inner pages --- */
+.section h2, .cta h2, .social-block h3 { font-style: normal; font-weight: 340; }
+
+/* --- condition rows --- */
+.condition:hover { background: transparent; padding-left: 14px; }
+.condition-num {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  color: rgba(201,169,110,0.6);
+  padding-top: 10px;
+}
+.sec-cream .condition-num { color: rgba(12,31,42,0.35); }
+.condition-name { font-style: normal; font-weight: 380; letter-spacing: -0.015em; }
+
+/* --- process steps --- */
+.process-num {
+  font-style: normal;
+  font-weight: 320;
+  font-size: 2.1rem;
+  color: rgba(201,169,110,0.5);
+  opacity: 1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+.process-step h4 { font-style: normal; font-weight: 380; }
+
+/* --- testimonials --- */
+.testimonial-quote {
+  font-style: normal;
+  font-weight: 340;
+  letter-spacing: -0.012em;
+  line-height: 1.5;
+}
+.testimonial-quote::before { content: none; }
+.testimonial-name {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--cream);
+}
+
+/* --- buttons: gold fills retired, teal is the action color --- */
+.btn-primary {
+  background: var(--teal);
+  color: var(--cream);
+  border: 1px solid var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.btn-primary:hover {
+  background: var(--teal-2);
+  color: var(--cream);
+  border-color: var(--teal-2);
+}
+.btn-outline {
+  color: rgba(250,247,242,0.82);
+  border: 1px solid rgba(250,247,242,0.3);
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+.btn-outline:hover {
+  background: var(--cream);
+  color: var(--ink);
+  border-color: var(--cream);
+}
+.nav-links .btn-outline { border-color: rgba(250,247,242,0.35); color: var(--cream); }
+.nav-links .btn-primary { background: var(--teal-2); border-color: rgba(250,247,242,0.25); }
+
+/* --- FAQ --- */
+.faq-q { font-style: normal; font-weight: 380; }
+.faq-q:hover { color: rgba(250,247,242,0.7); }
+.faq-icon {
+  border-color: rgba(250,247,242,0.3);
+  color: rgba(250,247,242,0.6);
+  border-radius: 0;
+}
+.faq-item.open .faq-icon { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+.faq-a a { color: var(--gold); }
+
+/* --- stats bar --- */
+.stat-val {
+  font-style: normal;
+  font-weight: 340;
+  color: var(--cream);
+}
+
+/* --- contact info --- */
+.contact-info-item .val {
+  font-style: normal;
+  font-weight: 360;
+  font-size: 1.3rem;
+  color: var(--cream);
+}
+.contact-info-item .val a:hover { color: var(--gold); }
+
+/* --- hours on dark --- */
+.hours-table.hours-on-dark .day { color: rgba(250,247,242,0.5); }
+
+/* --- policy --- */
+.policy-num {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  color: rgba(12,31,42,0.35);
+  padding-top: 8px;
+}
+
+/* --- gallery placeholders: quiet hairline cells --- */
+.gallery-cell { background: var(--ink-2); border-color: rgba(250,247,242,0.08); }
+.gallery-cell::before { background: none; }
+.gallery-cell-inner {
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.18);
+}
+
+/* --- editorial pull quote (replaces boxed quote visuals) --- */
+.pq-wrap {
+  border-top: 1px solid rgba(201,169,110,0.3);
+  border-bottom: 1px solid rgba(201,169,110,0.3);
+  padding: clamp(32px, 4vw, 52px) 0;
+}
+.pq {
+  font-family: var(--f-display);
+  font-style: normal;
+  font-weight: 340;
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  color: var(--cream);
+  margin: 0;
+}
+.sec-cream .pq { color: var(--ink); }
+.pq-attr {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.35);
+  margin-top: 22px;
+}
+.sec-cream .pq-attr { color: rgba(12,31,42,0.4); }
+
+/* --- offset hairline photo frame (homepage founder frame) --- */
+.v8-frame { position: relative; }
+.v8-frame img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.v8-frame-offset {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: 16px;
+  bottom: 16px;
+  border: 1px solid rgba(201,169,110,0.5);
+  z-index: 0;
+  pointer-events: none;
+}
+.v8-frame-cap {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+  margin-top: 18px;
+}
+.v8-frame-cap strong { font-weight: 600; color: var(--ink); }
+
+/* --- plain hairline list (replaces boxed visual lists) --- */
+.hl-list { border-top: 1px solid rgba(201,169,110,0.22); }
+.hl-list p {
+  font-size: 0.92rem;
+  color: rgba(250,247,242,0.62);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.14);
+  margin: 0;
+  line-height: 1.7;
+}
