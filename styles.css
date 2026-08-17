@@ -70,23 +70,24 @@ p  { font-size: 1.05rem; line-height: 1.82; }
 }
 .display-italic em { font-style: italic; color: var(--gold); }
 
-/* Small caps / labels */
+/* Section markers — engraved italic serif (replaces tracked small caps) */
 .label {
-  font-family: var(--f-body);
-  font-size: 0.7rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.08rem;
   font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: none;
   color: var(--gold);
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 .label::before {
   content: '';
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: rgba(201,169,110,0.5);
   display: inline-block;
 }
 .label.center { justify-content: center; }
