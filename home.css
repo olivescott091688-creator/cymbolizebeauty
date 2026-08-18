@@ -1430,3 +1430,7 @@ html.motion .ct-rule.visible { transform: scaleY(1); }
   .ed-item, .st-star { opacity: 1; transform: none; transition: none; }
   .mx-marker.mk-wait { opacity: 1; letter-spacing: 0.3em; }
 }
+
+/* v13: media-only wrapper so the offset frame never crosses the caption */
+.mx-frame-media { position: relative; }
+html.motion .mx-frame-media { overflow: visible; }

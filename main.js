@@ -301,3 +301,30 @@ document.querySelectorAll('a[href="#book"]').forEach(l => {
   window.addEventListener('scroll', onScroll, { passive: true });
   update();
 })();
+
+/* ── v13: reel playback resilience ─────────────────────
+   iOS Low Power Mode / data saver blocks autoplay, which left
+   some reels frozen on their poster. Play when visible, retry
+   on first touch, and pause offscreen to save battery. */
+document.addEventListener('DOMContentLoaded', () => {
+  const reels = document.querySelectorAll('video[autoplay]');
+  if (!reels.length) return;
+  const tryPlay = v => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  const vObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) tryPlay(e.target);
+    else e.target.pause();
+  }), { threshold: 0.15 });
+  reels.forEach(v => {
+    v.muted = true;
+    v.setAttribute('muted', '');
+    v.playsInline = true;
+    vObs.observe(v);
+    v.addEventListener('click', () => tryPlay(v));
+  });
+  const kick = () => reels.forEach(v => {
+    const r = v.getBoundingClientRect();
+    if (r.top < innerHeight && r.bottom > 0) tryPlay(v);
+  });
+  window.addEventListener('touchstart', kick, { once: true, passive: true });
+  window.addEventListener('scroll', kick, { once: true, passive: true });
+});
