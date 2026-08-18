@@ -1596,6 +1596,10 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   :root { --pad: 52px 20px; }
   .container { padding: 0 20px; }
   #navbar { padding: 0 20px; }
+  .nav-inner { padding: 8px 0; }
+  #navbar.scrolled .nav-inner { padding: 6px 0; }
+  .nav-logo-img { height: 84px; }
+  #navbar.scrolled .nav-logo-img { height: 68px; }
   .sec-divider { padding: 22px 20px; }
 
   /* Hero */

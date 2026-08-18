@@ -59,7 +59,106 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Init modules ───────────────────────────── */
   initCursor();
   initContactForm();
+  initEditorialMotion();
 });
+
+/* ── Editorial Motion (v9) ─────────────────────────── */
+function initEditorialMotion() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('motion');
+
+  /* markers: fade in + letter-spacing settles */
+  const markers = document.querySelectorAll('.mx-marker');
+  if (markers.length) {
+    markers.forEach(m => { m.classList.remove('reveal'); m.classList.add('mk-wait'); });
+    const mkObs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('mk-in'); mkObs.unobserve(e.target); }
+    }), { threshold: 0.5 });
+    markers.forEach(m => mkObs.observe(m));
+  }
+
+  /* staggered editorial groups */
+  const groups = [
+    ['.sv-group', '.sv-row'],
+    ['.mx-who-list', '.mx-who-item'],
+    ['.mx-edu-lines', '.mx-edu-line'],
+    ['.fa-links', '.fa-row'],
+    ['.rv-inner', '.rv-strip'],
+    ['.mx-steps', '.mx-step'],
+    ['.faq-list', '.faq-item']
+  ];
+  const gObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('ed-in'); gObs.unobserve(e.target); }
+  }), { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+  groups.forEach(([pSel, cSel]) => {
+    document.querySelectorAll(pSel).forEach(parent => {
+      const kids = parent.querySelectorAll(cSel);
+      if (!kids.length) return;
+      kids.forEach((k, i) => {
+        k.classList.remove('reveal');
+        k.classList.add('ed-item');
+        k.style.transitionDelay = Math.min(i * 90, 540) + 'ms';
+      });
+      gObs.observe(parent);
+    });
+  });
+
+  /* stars arrive one by one */
+  const starEls = document.querySelectorAll('.rv-stars, .rv-score-stars, .ct-rating-stars');
+  if (starEls.length) {
+    const stObs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('ed-in'); stObs.unobserve(e.target); }
+    }), { threshold: 0.6 });
+    starEls.forEach(el => {
+      const chars = [...el.textContent];
+      let si = 0;
+      el.innerHTML = chars.map(ch => ch === '★'
+        ? `<span class="st-star" style="transition-delay:${(si++) * 110}ms">★</span>`
+        : ch).join('');
+      el.classList.add('st-host');
+      stObs.observe(el);
+    });
+  }
+
+  /* 5.0 counts up */
+  const score = document.querySelector('.rv-score-num');
+  if (score) {
+    const target = parseFloat(score.textContent) || 5;
+    const cObs = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      cObs.unobserve(e.target);
+      const t0 = performance.now(), dur = 1300;
+      const step = t => {
+        const p = Math.min((t - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        score.textContent = (target * eased).toFixed(1);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }), { threshold: 0.8 });
+    cObs.observe(score);
+  }
+
+  /* ghost numerals drift with scroll */
+  const ghosts = document.querySelectorAll('.mx-step-ghost');
+  if (ghosts.length) {
+    let ticking = false;
+    const drift = () => {
+      const vh = window.innerHeight;
+      ghosts.forEach(g => {
+        const r = g.parentElement.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        const off = (r.top + r.height / 2 - vh / 2) * 0.08;
+        g.style.transform = 'translateY(' + off.toFixed(1) + 'px)';
+      });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(drift); }
+    }, { passive: true });
+    drift();
+  }
+}
 
 /* ── Custom Cursor ─────────────────────────────────── */
 function initCursor() {

@@ -1277,3 +1277,119 @@
   font-size: 0.78rem;
   letter-spacing: 0.06em;
 }
+
+/* ============================================================
+   SYSTEM v9 — mobile rhythm + editorial motion
+   ============================================================ */
+
+/* --- mobile spacing: consistent, tighter rhythm --- */
+@media (max-width: 640px) {
+  .mx-section, .sv-section, .rv-section { padding-top: 76px; padding-bottom: 76px; }
+  .fa-section { padding-top: 68px; padding-bottom: 68px; }
+  .ct-section { padding-top: 84px; padding-bottom: 92px; }
+  .ct-rule { height: 34px; margin-bottom: 34px; }
+  .ct-h2 { margin-bottom: 30px; }
+  .ct-h2 br { display: none; }
+  .ct-attr { margin-bottom: 40px; }
+  .ct-rule2 { margin-bottom: 32px; }
+  .ct-btn { margin-bottom: 42px; padding: 17px 36px; }
+  .ct-rating { flex-wrap: wrap; gap: 8px 14px; }
+
+  /* let headlines wrap naturally — no desktop line breaks */
+  .mx-h2 br, .sv-headline br { display: none; }
+  .mx-h2 { margin-bottom: 24px; }
+
+  /* menu */
+  .sv-head { padding-bottom: 38px; margin-bottom: 46px; }
+  .sv-sig { padding: 30px 22px; margin-bottom: 52px; }
+  .sv-sig-name { font-size: 2.35rem; }
+  .sv-sig-name br { display: none; }
+  .sv-full-groups { margin-bottom: 46px; }
+  .sv-full-groups .sv-group + .sv-group { margin-top: 44px; }
+  .sv-two-col > div + div { margin-top: 44px; }
+  .sv-row { padding: 18px 0; gap: 16px; }
+  .sv-foot { margin-top: 42px; padding-top: 26px; gap: 18px; }
+
+  /* hero info bar: single tidy column */
+  .hm-hero-bar-inner { padding: 16px 24px; gap: 9px; flex-direction: column; align-items: flex-start; }
+
+  /* founder / education */
+  .mx-founder-grid, .mx-edu-grid, .mx-who-grid { gap: 44px; }
+  .mx-cred-line { margin: 24px 0 28px; padding: 16px 0; }
+  .mx-frame { max-width: none; }
+
+  /* process: clear separation between steps */
+  .mx-steps { gap: 0; margin: 36px 0 34px; }
+  .mx-step { padding-top: 50px; padding-bottom: 34px; }
+  .mx-step-ghost { font-size: 4.6rem; left: -4px; }
+  .mx-step + .mx-step { border-top: 1px solid rgba(12,31,42,0.1); }
+  .mx-step + .mx-step .mx-step-ghost { top: 34px; }
+  .mx-step + .mx-step { padding-top: 84px; }
+
+  /* story */
+  .mx-story-open { margin-bottom: 30px; }
+  .mx-story-rule { margin: 26px auto; }
+
+  /* reviews: stack, attribution reads left like a byline */
+  .rv-head { margin-bottom: 36px; gap: 10px; }
+  .rv-strip { grid-template-columns: 1fr; gap: 16px; align-items: start; padding: 30px 0; }
+  .rv-attr { text-align: left; display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
+  .rv-name, .rv-service { margin-bottom: 0; }
+  .rv-stars { flex-basis: 100%; margin-top: 2px; }
+  .rv-foot { margin-top: 34px; flex-direction: column; align-items: flex-start; gap: 22px; }
+
+  /* follow along */
+  .fa-handle { margin: 12px 0 14px; }
+  .fa-desc { margin-bottom: 34px; }
+  .fa-row { flex-wrap: wrap; gap: 8px 16px; padding: 19px 0; }
+  .fa-row-note { flex: 1 1 100%; order: 3; }
+}
+
+/* --- editorial motion (JS-driven, respects reduced motion) --- */
+.mx-marker { transition: opacity 0.9s ease, letter-spacing 1.3s cubic-bezier(.19,1,.22,1); }
+.mx-marker.mk-wait { opacity: 0; letter-spacing: 0.46em; }
+.mx-marker.mk-wait.mk-in { opacity: 1; letter-spacing: 0.3em; }
+
+.ed-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.85s cubic-bezier(.19,1,.22,1), transform 0.85s cubic-bezier(.19,1,.22,1);
+}
+.ed-in .ed-item { opacity: 1; transform: none; }
+
+/* category hairlines draw in from the left */
+.sv-group .sv-cat { border-bottom-color: transparent; position: relative; }
+.sv-group .sv-cat::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 100%; height: 1px;
+  background: rgba(201,169,110,0.28);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(.19,1,.22,1) 0.1s;
+}
+.ed-in .sv-cat::after { transform: scaleX(1); }
+html:not(.motion) .sv-group .sv-cat { border-bottom-color: rgba(201,169,110,0.28); }
+
+/* portrait frames: cinematic wipe + offset frame settles after */
+html.motion .mx-frame img { clip-path: inset(0 100% 0 0); transition: clip-path 1.25s cubic-bezier(.77,0,.18,1) 0.1s; }
+html.motion .mx-frame.visible img { clip-path: inset(0 0 0 0); }
+html.motion .mx-frame-offset { opacity: 0; transform: translate(10px,10px); transition: opacity 0.9s ease 0.7s, transform 0.9s cubic-bezier(.19,1,.22,1) 0.7s; }
+html.motion .mx-frame.visible .mx-frame-offset { opacity: 1; transform: none; }
+
+/* CTA rule grows down */
+html.motion .ct-rule { transform: scaleY(0); transform-origin: top; transition: transform 1.1s cubic-bezier(.19,1,.22,1) 0.15s; }
+html.motion .ct-rule.visible { transform: scaleY(1); }
+
+/* stars arrive one by one */
+.st-star { display: inline-block; opacity: 0; transform: translateY(5px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(.19,1,.22,1); }
+.ed-in .st-star, .st-host.ed-in .st-star { opacity: 1; transform: none; }
+
+/* ghost numerals drift with scroll (transform set by JS) */
+.mx-step-ghost { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ed-item, .st-star { opacity: 1; transform: none; transition: none; }
+  .mx-marker.mk-wait { opacity: 1; letter-spacing: 0.3em; }
+}
