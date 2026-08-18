@@ -85,7 +85,8 @@ function initEditorialMotion() {
     ['.fa-links', '.fa-row'],
     ['.rv-inner', '.rv-strip'],
     ['.mx-steps', '.mx-step'],
-    ['.faq-list', '.faq-item']
+    ['.faq-list', '.faq-item'],
+    ['.footer-top', ':scope > div']
   ];
   const gObs = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('ed-in'); gObs.unobserve(e.target); }
@@ -138,6 +139,22 @@ function initEditorialMotion() {
     }), { threshold: 0.8 });
     cObs.observe(score);
   }
+
+  /* gold scroll progress hairline */
+  const prog = document.createElement('div');
+  prog.className = 'scroll-progress';
+  prog.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(prog);
+  let progTick = false;
+  const progUpd = () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0).toFixed(4) + ')';
+    progTick = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!progTick) { progTick = true; requestAnimationFrame(progUpd); }
+  }, { passive: true });
+  progUpd();
 
   /* ghost numerals drift with scroll */
   const ghosts = document.querySelectorAll('.mx-step-ghost');
