@@ -33,6 +33,10 @@
     {
       "src": "*.svg",
       "use": "@vercel/static"
+    },
+    {
+      "src": "*.mp4",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
