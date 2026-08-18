@@ -3460,3 +3460,35 @@ html.motion .ed-in .ed-item { opacity: 1; transform: none; }
 /* footer: columns cascade in, logo settles */
 html.motion .footer-logo-img { opacity: 0; transform: translateY(12px); transition: opacity 1s var(--ease) 0.1s, transform 1s var(--ease) 0.1s; }
 html.motion .footer-top.ed-in .footer-logo-img { opacity: 1; transform: none; }
+
+/* ============================================================
+   REEL EMBED — reusable vertical video frame (v12)
+   ============================================================ */
+.reel-embed { margin: 0; width: min(320px, 100%); }
+.reel-embed-frame { position: relative; }
+.reel-embed-frame::after {
+  content: '';
+  position: absolute;
+  top: 16px; left: -16px; right: 16px; bottom: -16px;
+  border: 1px solid rgba(201,169,110,0.38);
+  pointer-events: none;
+}
+.reel-embed video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 464 / 848;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.reel-embed figcaption {
+  margin-top: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--text-mid);
+}
+.reel-embed figcaption em { color: var(--gold); }
+.reel-embed--center { margin: 56px auto 8px; }
+.reel-embed--center figcaption { text-align: center; }
+.ba-frame video { display: block; width: 100%; position: relative; z-index: 1; }
