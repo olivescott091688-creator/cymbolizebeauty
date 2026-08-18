@@ -949,6 +949,43 @@
 }
 .fa-row:hover .fa-row-arr { color: var(--gold); transform: translate(4px,-4px); }
 
+/* --- v11: follow-along reel (real process video) --- */
+.fa-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(48px, 6vw, 110px);
+  align-items: center;
+}
+.fa-reel { margin: 0; justify-self: end; width: min(330px, 100%); }
+.fa-reel-frame { position: relative; }
+.fa-reel-frame::after {
+  content: '';
+  position: absolute;
+  top: 18px; left: -18px; right: 18px; bottom: -18px;
+  border: 1px solid rgba(201,169,110,0.38);
+  pointer-events: none;
+}
+.fa-reel video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 464 / 848;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.fa-reel-cap {
+  margin-top: 34px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(250,247,242,0.45);
+}
+.fa-reel-cap em { color: var(--gold); }
+@media (max-width: 900px) {
+  .fa-grid { grid-template-columns: 1fr; gap: 64px; }
+  .fa-reel { justify-self: center; width: min(280px, 86%); }
+}
+
 /* ============================================================
    CTA — centered editorial, no columns, no ornaments
    ============================================================ */
