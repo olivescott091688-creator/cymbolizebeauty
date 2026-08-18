@@ -328,3 +328,33 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('touchstart', kick, { once: true, passive: true });
   window.addEventListener('scroll', kick, { once: true, passive: true });
 });
+
+/* ── v15: site intro, page frame, editorial numerals ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* full-screen intro */
+  const intro = document.getElementById('siteIntro');
+  if (intro && !intro.classList.contains('si-skip') && !reduceMotion) {
+    document.body.classList.add('si-lock');
+    setTimeout(() => intro.classList.add('si-exit'), 2500);
+    setTimeout(() => {
+      intro.classList.add('si-done');
+      document.body.classList.remove('si-lock');
+    }, 3650);
+  } else if (intro) {
+    intro.classList.add('si-done');
+  }
+
+  /* fixed luxury page frame */
+  const pf = document.createElement('div');
+  pf.className = 'page-frame';
+  pf.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(pf);
+
+  /* giant outlined index numerals: "02/08" → 02 + "of 08" */
+  document.querySelectorAll('.sec-head-num').forEach(el => {
+    const m = el.textContent.replace(/\s+/g, '').match(/^(\d+)\/(\d+)$/);
+    if (m) el.innerHTML = '<span class="shn-big">' + m[1] + '</span><span class="shn-of">of ' + m[2] + '</span>';
+  });
+});
