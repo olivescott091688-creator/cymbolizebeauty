@@ -3613,11 +3613,11 @@ body.si-lock { overflow: hidden; }
   font-family: var(--f-body); font-size: 0.5rem; font-weight: 700;
   letter-spacing: 0.44em; text-transform: uppercase; text-indent: 0.44em;
   color: var(--gold);
-  opacity: 0; animation: siFade 0.5s ease 0.15s forwards;
+  opacity: 0; animation: siFade 0.4s ease 0.05s forwards;
 }
 .si-mono { display: block; width: 92px; height: 78px; overflow: hidden; margin: 12px auto 0;
   clip-path: inset(0 0 100% 0);
-  animation: siUnveil 0.85s var(--ease) 0.35s forwards; }
+  animation: siUnveil 0.7s var(--ease) 0.15s forwards; }
 .si-mono-img { width: 92px; height: auto; display: block;
   filter: saturate(0.5) brightness(1.22) contrast(1.02); }
 @keyframes siUnveil { to { clip-path: inset(0 0 0 0); } }
@@ -3626,7 +3626,7 @@ body.si-lock { overflow: hidden; }
   font-family: var(--f-body); font-size: 1.05rem; font-weight: 500;
   letter-spacing: 0.5em; text-transform: uppercase; text-indent: 0.5em;
   color: var(--cream);
-  opacity: 0; animation: siFade 0.6s ease 0.85s forwards;
+  opacity: 0; animation: siFade 0.5s ease 0.55s forwards;
 }
 
 /* v18: open lockup — no box. "Beauty" in gold italic beneath the wordmark */
@@ -3642,7 +3642,7 @@ body.si-lock { overflow: hidden; }
   font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1;
   letter-spacing: 0.04em; color: var(--gold);
   clip-path: inset(0 100% 0 0);              /* masked L→R reveal */
-  animation: siWord 0.85s var(--ease) 1.15s forwards;
+  animation: siWord 0.7s var(--ease) 0.8s forwards;
 }
 @keyframes siWord { to { clip-path: inset(0 -6% 0 0); } }
 /* single centered gold rule beneath the lockup */
@@ -3650,7 +3650,7 @@ body.si-lock { overflow: hidden; }
   content: ''; position: absolute; bottom: 0; left: 50%; width: 150px; height: 1px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
   transform: translateX(-50%) scaleX(0); transform-origin: center;
-  animation: siRuleC 0.7s var(--ease) 1.65s forwards;
+  animation: siRuleC 0.6s var(--ease) 1.15s forwards;
 }
 @keyframes siRuleC { to { transform: translateX(-50%) scaleX(1); } }
 
@@ -3658,7 +3658,7 @@ body.si-lock { overflow: hidden; }
 .si-seal {
   position: absolute; top: 50%; right: -34px;
   width: 78px; height: 78px; transform: translateY(-50%) scale(0.82) rotate(-8deg);
-  opacity: 0; animation: siSeal 0.8s var(--ease) 1.85s forwards;
+  opacity: 0; animation: siSeal 0.7s var(--ease) 1.3s forwards;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,0.28));
 }
 .si-seal svg { width: 100%; height: 100%; display: block; }
@@ -3674,7 +3674,7 @@ body.si-lock { overflow: hidden; }
 
 /* bottom ink zone: tag row + ornamental rule */
 .si-bot { text-align: center;
-  opacity: 0; animation: siFade 0.7s ease 2.1s forwards; }
+  opacity: 0; animation: siFade 0.6s ease 1.45s forwards; }
 .si-tags {
   display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap;
   justify-content: center;
@@ -3756,28 +3756,7 @@ body.si-lock { overflow: hidden; }
    ===================================================== */
 
 /* Numbered index strip — runs across top, thin gold hairlines, index number + label */
-.ed-index {
-  display: flex; align-items: center;
-  margin-bottom: 52px;
-  border-top: 1px solid rgba(201,169,110,0.22);
-  border-bottom: 1px solid rgba(201,169,110,0.1);
-  padding: 9px 0;
-}
-.ed-index-num {
-  font-family: var(--f-body); font-size: 0.54rem; font-weight: 700;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); padding-right: 16px;
-  border-right: 1px solid rgba(201,169,110,0.28);
-  margin-right: 16px; white-space: nowrap;
-}
-.ed-index-label {
-  font-family: var(--f-body); font-size: 0.54rem; font-weight: 500;
-  letter-spacing: 0.24em; text-transform: uppercase;
-  color: rgba(250,247,242,0.35);
-}
-.sec-cream .ed-index { border-top-color: rgba(3,43,41,0.14); border-bottom-color: rgba(3,43,41,0.07); }
-.sec-cream .ed-index-label { color: rgba(3,43,41,0.35); }
-.sec-cream .ed-index-num { border-right-color: rgba(3,43,41,0.18); color: var(--teal); }
+/* v19: ed-index strips removed per client (read as vibe-coded double lines) */
 
 /* Hairline rule with centered small-caps micro-label */
 .rule-label {
@@ -3931,7 +3910,7 @@ body.si-lock { overflow: hidden; }
    v18 · CIRCULAR ACTION RAIL (fixed bottom-right, all pages)
    ============================================================ */
 .fab-rail {
-  position: fixed; right: 22px; bottom: 26px; z-index: 960;
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 960;
   display: flex; flex-direction: column; align-items: center; gap: 11px;
 }
 .fab-btn {
@@ -3958,7 +3937,7 @@ body.si-lock { overflow: hidden; }
 }
 .fab-btn:hover::after { opacity: 1; }
 @media (max-width: 640px) {
-  .fab-rail { right: 14px; bottom: 18px; gap: 9px; }
+  .fab-rail { right: 14px; gap: 9px; }
   .fab-btn { width: 44px; height: 44px; }
   .fab-btn svg { width: 17px; height: 17px; }
   .fab-btn::after { display: none; }
