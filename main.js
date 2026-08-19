@@ -377,4 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
     rail.appendChild(a);
   });
   document.body.appendChild(rail);
+  /* Rail stays hidden on first view; slides in after scrolling past the hero */
+  const railToggle = () => rail.classList.toggle('on', window.scrollY > window.innerHeight * 0.55);
+  window.addEventListener('scroll', railToggle, { passive: true });
+  railToggle();
 });

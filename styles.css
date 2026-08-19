@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap');
 /* =====================================================
    CymbolizeBeauty — Editorial Redesign v2
    Colors: Ink #0A0A0A | Teal #132E38 | Gold #C9A96E | Cream #FAF7F2
@@ -4029,4 +4030,24 @@ body.si-lock { overflow: hidden; }
   color: rgba(250,247,242,0.82);
   max-width: 30em;
   margin: 0 0 38px;
+}
+
+/* =====================================================
+   v21 · Sora headings (client pick) + action-rail scroll reveal
+   ===================================================== */
+h1, h2, h3, .hm-hero-h1, .hero-h1, .page-hero h1 { font-family: 'Sora', var(--f-body) !important; letter-spacing: -0.015em; }
+.hm-hero-sub { font-family: 'Sora', var(--f-body) !important; }
+.mm-links a { font-family: 'Sora', var(--f-body) !important; }
+
+/* Rail hidden on first view; slides in after scrolling past the hero */
+.fab-rail {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.fab-rail.on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
 }
