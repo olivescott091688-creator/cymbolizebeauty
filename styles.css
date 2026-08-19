@@ -2509,7 +2509,7 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: clamp(88px, 12vh, 130px) 32px 40px;
+  padding: clamp(128px, 17vh, 170px) 32px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
