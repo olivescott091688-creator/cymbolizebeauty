@@ -261,13 +261,13 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   flex-shrink: 0;
 }
 .nav-logo-img {
-  height: 148px;
+  height: 172px;
   width: auto;
   display: block;
   object-fit: contain;
   transition: height var(--t);
 }
-#navbar.scrolled .nav-logo-img { height: 108px; }
+#navbar.scrolled .nav-logo-img { height: 124px; }
 
 .nav-links {
   display: flex;
@@ -1606,8 +1606,8 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   #navbar { padding: 0 20px; }
   .nav-inner { padding: 8px 0; }
   #navbar.scrolled .nav-inner { padding: 6px 0; }
-  .nav-logo-img { height: 104px; }
-  #navbar.scrolled .nav-logo-img { height: 80px; }
+  .nav-logo-img { height: 120px; }
+  #navbar.scrolled .nav-logo-img { height: 92px; }
   .footer-logo-img { height: 170px; margin-left: -4px; }
   .sec-divider { padding: 22px 20px; }
 
