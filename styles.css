@@ -3613,11 +3613,11 @@ body.si-lock { overflow: hidden; }
   font-family: var(--f-body); font-size: 0.5rem; font-weight: 700;
   letter-spacing: 0.44em; text-transform: uppercase; text-indent: 0.44em;
   color: var(--gold);
-  opacity: 0; animation: siFade 0.5s ease 0.22s forwards;
+  opacity: 0; animation: siFade 0.7s ease 0.45s forwards;
 }
 .si-mono { display: block; width: 92px; height: 78px; overflow: hidden; margin: 12px auto 0;
   clip-path: inset(0 0 100% 0);
-  animation: siUnveil 0.74s var(--ease) 0.30s forwards; }
+  animation: siUnveil 1.05s var(--ease) 0.75s forwards; }
 .si-mono-img { width: 92px; height: auto; display: block;
   filter: saturate(0.5) brightness(1.22) contrast(1.02); }
 @keyframes siUnveil { to { clip-path: inset(0 0 0 0); } }
@@ -3626,44 +3626,39 @@ body.si-lock { overflow: hidden; }
   font-family: var(--f-body); font-size: 1.05rem; font-weight: 500;
   letter-spacing: 0.5em; text-transform: uppercase; text-indent: 0.5em;
   color: var(--cream);
-  opacity: 0; animation: siFade 0.55s ease 0.8s forwards;
+  opacity: 0; animation: siFade 0.8s ease 1.55s forwards;
 }
 
-/* cream color-field band — THE contrast beat (opens vertically) */
+/* v18: open lockup — no box. "Beauty" in gold italic beneath the wordmark */
 .si-band {
   position: relative; width: 100%;
-  margin: 18px 0 20px;
-  background: var(--cream);
-  padding: 30px 34px 32px;
-  clip-path: inset(50% 0 50% 0);
-  animation: siBand 0.72s var(--ease) 0.55s forwards;
-  box-shadow: 0 30px 70px -34px rgba(0,0,0,0.6);
+  margin: 4px 0 8px;
+  background: transparent;
+  padding: 8px 0 20px;
 }
-@keyframes siBand { to { clip-path: inset(0 0 0 0); } }
 .si-word {
   display: block; text-align: center;
   font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-  font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 0.92;
-  letter-spacing: -0.01em; color: var(--ink);
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1;
+  letter-spacing: 0.04em; color: var(--gold);
   clip-path: inset(0 100% 0 0);              /* masked L→R reveal */
-  animation: siWord 0.82s var(--ease) 0.98s forwards;
+  animation: siWord 1.15s var(--ease) 2.15s forwards;
 }
 @keyframes siWord { to { clip-path: inset(0 -6% 0 0); } }
-/* ink hairlines drawn along band edges */
-.si-band::before, .si-band::after {
-  content: ''; position: absolute; left: 30px; right: 30px; height: 1px;
-  background: rgba(3,43,41,0.28); transform: scaleX(0); transform-origin: left;
-  animation: siRuleX 0.66s var(--ease) 1.18s forwards;
+/* single centered gold rule beneath the lockup */
+.si-band::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; width: 150px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  transform: translateX(-50%) scaleX(0); transform-origin: center;
+  animation: siRuleC 0.9s var(--ease) 3.05s forwards;
 }
-.si-band::before { top: 14px; }
-.si-band::after  { bottom: 14px; }
-@keyframes siRuleX { to { transform: scaleX(1); } }
+@keyframes siRuleC { to { transform: translateX(-50%) scaleX(1); } }
 
 /* gold seal roundel — circular text, stamps the band's right edge */
 .si-seal {
-  position: absolute; top: 50%; right: -30px;
-  width: 92px; height: 92px; transform: translateY(-50%) scale(0.82) rotate(-8deg);
-  opacity: 0; animation: siSeal 0.78s var(--ease) 1.4s forwards;
+  position: absolute; top: 50%; right: -34px;
+  width: 78px; height: 78px; transform: translateY(-50%) scale(0.82) rotate(-8deg);
+  opacity: 0; animation: siSeal 0.95s var(--ease) 3.5s forwards;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,0.28));
 }
 .si-seal svg { width: 100%; height: 100%; display: block; }
@@ -3679,7 +3674,7 @@ body.si-lock { overflow: hidden; }
 
 /* bottom ink zone: tag row + ornamental rule */
 .si-bot { text-align: center;
-  opacity: 0; animation: siFade 0.6s ease 1.58s forwards; }
+  opacity: 0; animation: siFade 0.85s ease 4.0s forwards; }
 .si-tags {
   display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap;
   justify-content: center;
@@ -3709,8 +3704,8 @@ body.si-lock { overflow: hidden; }
 @media (max-width: 560px) {
   .si-stage { width: 90vw; }
   .si-seal { display: none; }
-  .si-band { padding: 24px 20px 26px; margin: 14px 0 16px; }
-  .si-word { font-size: clamp(1.9rem, 11vw, 2.9rem); }
+  .si-band { padding: 6px 0 16px; margin: 4px 0 8px; }
+  .si-word { font-size: clamp(1.6rem, 8.5vw, 2.2rem); }
   .si-eyebrow { font-size: 0.78rem; letter-spacing: 0.4em; text-indent: 0.4em; }
   .si-tags { font-size: 0.44rem; letter-spacing: 0.24em; gap: 9px; }
 }
@@ -3931,3 +3926,40 @@ body.si-lock { overflow: hidden; }
 .edge-spine-l { left: 26px; transform: translateY(-50%) rotate(180deg); }
 .edge-spine-r { right: 26px; transform: translateY(-50%); }
 @media (max-width: 1180px) { .edge-spine { display: none; } }
+
+/* ============================================================
+   v18 · CIRCULAR ACTION RAIL (fixed bottom-right, all pages)
+   ============================================================ */
+.fab-rail {
+  position: fixed; right: 22px; bottom: 26px; z-index: 960;
+  display: flex; flex-direction: column; align-items: center; gap: 11px;
+}
+.fab-btn {
+  position: relative;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--ink);
+  border: 1px solid rgba(201,169,110,0.6);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.32);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.fab-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
+.fab-btn svg { width: 19px; height: 19px; display: block; }
+.fab-btn::after {
+  content: attr(data-label);
+  position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%);
+  background: var(--ink); color: var(--cream);
+  border: 1px solid rgba(201,169,110,0.4);
+  font-family: var(--f-body); font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 7px 12px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.22s ease;
+}
+.fab-btn:hover::after { opacity: 1; }
+@media (max-width: 640px) {
+  .fab-rail { right: 14px; bottom: 18px; gap: 9px; }
+  .fab-btn { width: 44px; height: 44px; }
+  .fab-btn svg { width: 17px; height: 17px; }
+  .fab-btn::after { display: none; }
+}

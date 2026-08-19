@@ -337,11 +337,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const intro = document.getElementById('siteIntro');
   if (intro && !intro.classList.contains('si-skip') && !reduceMotion) {
     document.body.classList.add('si-lock');
-    setTimeout(() => intro.classList.add('si-exit'), 2500);
+    setTimeout(() => intro.classList.add('si-exit'), 4700);
     setTimeout(() => {
       intro.classList.add('si-done');
       document.body.classList.remove('si-lock');
-    }, 3060);
+    }, 5300);
   } else if (intro) {
     intro.classList.add('si-done');
   }
@@ -419,4 +419,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(l);
     document.body.appendChild(r);
   }
+});
+
+/* ── v18: circular action rail (book / contact / review / accessibility) ── */
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.fab-rail')) return;
+  const rail = document.createElement('div');
+  rail.className = 'fab-rail';
+  const items = [
+    { label: 'Book Now', href: 'https://cymbolizebeauty.glossgenius.com/services', ext: true,
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>' },
+    { label: 'Contact', href: 'contact.html', ext: false,
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>' },
+    { label: 'Leave a Review', href: 'https://www.google.com/search?q=CymbolizeBeauty+Las+Vegas+reviews', ext: true,
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
+    { label: 'Accessibility', href: 'accessibility.html', ext: false,
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M4 9.5h16"/><path d="M12 9.5v5"/><path d="M12 14.5L8.5 21"/><path d="M12 14.5l3.5 6.5"/></svg>' }
+  ];
+  items.forEach(it => {
+    const a = document.createElement('a');
+    a.className = 'fab-btn';
+    a.href = it.href;
+    a.setAttribute('data-label', it.label);
+    a.setAttribute('aria-label', it.label);
+    if (it.ext) { a.target = '_blank'; a.rel = 'noopener'; }
+    a.innerHTML = it.icon;
+    rail.appendChild(a);
+  });
+  document.body.appendChild(rail);
 });
