@@ -3564,100 +3564,63 @@ html.motion .footer-top.ed-in .footer-logo-img { opacity: 1; transform: none; }
 }
 
 /* =====================================================
-   v15 · LUXURY GRAPHIC PASS
-   full-screen intro · page frame · editorial numerals ·
-   corner brackets · ornament dividers
+   v16 · ENTRANCE INTRO — editorial, restrained
+   Solid ink screen · wordmark set once (no per-letter stagger) ·
+   single gold hairline rule draws left→right · clean fade/lift exit.
+   Under 2 seconds total. Mechanics: once-per-session sessionStorage
+   'cbIntroSeen', body scroll lock during play, all 8 pages,
+   prefers-reduced-motion hides it.
    ===================================================== */
 
 /* ---- full-screen site intro ---- */
-.site-intro { position: fixed; inset: 0; z-index: 4000; overflow: hidden; }
+.site-intro {
+  position: fixed; inset: 0; z-index: 4000; overflow: hidden;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 1; visibility: visible;
+  transition: opacity 0.42s ease, visibility 0.42s ease;
+}
+.site-intro.si-exit { opacity: 0; visibility: hidden; }
 .site-intro.si-done, .site-intro.si-skip { display: none !important; }
 body.si-lock { overflow: hidden; }
 
-.si-panel { position: absolute; top: 0; bottom: 0; width: 50.5%; background: var(--ink); z-index: 1; }
-.si-panel-l { left: 0; }
-.si-panel-r { right: 0; }
-.site-intro.si-exit .si-panel-l { animation: siPanelL 1.05s var(--ease) forwards; }
-.site-intro.si-exit .si-panel-r { animation: siPanelR 1.05s var(--ease) forwards; }
-@keyframes siPanelL { to { transform: translateX(-101%); } }
-@keyframes siPanelR { to { transform: translateX(101%); } }
+.si-inner {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 32px;
+}
 
-.si-frame {
-  position: absolute; inset: 20px; z-index: 2;
-  border: 1px solid rgba(201,169,110,0.28);
-  opacity: 0; transform: scale(1.015);
-  animation: siFrame 1.5s var(--ease) 0.4s forwards;
+/* Wordmark — single unit, no per-letter animation */
+.si-wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400; font-style: normal;
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0;
+  animation: siFade 0.55s ease 0.1s forwards;
 }
-.si-frame::before, .si-frame::after {
-  content: ''; position: absolute; width: 26px; height: 26px;
-  border-color: var(--gold); border-style: solid;
-}
-.si-frame::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
-.si-frame::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
-@keyframes siFrame { to { opacity: 1; transform: none; } }
 
-.si-center {
-  position: absolute; inset: 0; z-index: 3;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 0 24px;
+/* Gold hairline rule — draws left to right */
+.si-rule {
+  width: 140px; height: 1px;
+  background: var(--gold);
+  margin: 18px auto;
+  transform: scaleX(0); transform-origin: left;
+  animation: siRule 0.62s var(--ease) 0.52s forwards;
 }
-.site-intro.si-exit .si-center,
-.site-intro.si-exit .si-frame { opacity: 0 !important; transition: opacity .38s ease; }
-.site-intro.si-exit .si-center { transform: translateY(-12px); transition: opacity .38s ease, transform .38s ease; }
+@keyframes siRule { to { transform: scaleX(1); } }
 
-.si-orn { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
-.si-orn-line {
-  width: 72px; height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold));
-  transform: scaleX(0); transform-origin: right;
-  animation: siLine .9s var(--ease) .3s forwards;
+/* Location tagline */
+.si-sub {
+  font-family: var(--f-body);
+  font-size: 0.54rem; font-weight: 600;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: rgba(250,247,242,0.38);
+  opacity: 0;
+  animation: siFade 0.45s ease 0.9s forwards;
 }
-.si-orn-line:last-child {
-  background: linear-gradient(to left, transparent, var(--gold));
-  transform-origin: left;
-}
-.si-orn-diamond {
-  width: 7px; height: 7px; border: 1px solid var(--gold); flex: none;
-  transform: rotate(45deg) scale(0);
-  animation: siDia .7s var(--ease) .6s forwards;
-}
-@keyframes siLine { to { transform: scaleX(1); } }
-@keyframes siDia { to { transform: rotate(45deg) scale(1); } }
 
-.si-word { display: flex; overflow: hidden; padding: 0 0 0.04em 0.18em; }
-.si-word span {
-  font-family: var(--f-display); font-weight: 380;
-  font-size: clamp(2.4rem, 7vw, 5rem);
-  letter-spacing: 0.18em; line-height: 1.12; color: var(--cream);
-  display: inline-block; transform: translateY(118%);
-  animation: siRise 1s var(--ease) forwards;
-}
-.si-word span:nth-child(1) { animation-delay: .40s; }
-.si-word span:nth-child(2) { animation-delay: .46s; }
-.si-word span:nth-child(3) { animation-delay: .52s; }
-.si-word span:nth-child(4) { animation-delay: .58s; }
-.si-word span:nth-child(5) { animation-delay: .64s; }
-.si-word span:nth-child(6) { animation-delay: .70s; }
-.si-word span:nth-child(7) { animation-delay: .76s; }
-.si-word span:nth-child(8) { animation-delay: .82s; }
-.si-word span:nth-child(9) { animation-delay: .88s; }
-@keyframes siRise { to { transform: translateY(0); } }
-
-.si-script {
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-  font-size: clamp(1.5rem, 3.4vw, 2.35rem); color: var(--gold); margin-top: 4px;
-  opacity: 0; filter: blur(7px);
-  animation: siBlur 1s ease 1.25s forwards;
-}
-@keyframes siBlur { to { opacity: 1; filter: blur(0); } }
-
-.si-tag {
-  margin-top: 34px; font-family: var(--f-body);
-  font-size: 0.58rem; font-weight: 600; text-transform: uppercase;
-  color: rgba(250,247,242,0.45); letter-spacing: 0.2em; opacity: 0;
-  animation: siTag 1s ease 1.6s forwards;
-}
-@keyframes siTag { to { opacity: 1; letter-spacing: 0.4em; } }
+@keyframes siFade { to { opacity: 1; } }
 
 @media (prefers-reduced-motion: reduce) { .site-intro { display: none !important; } }
 
@@ -3674,15 +3637,21 @@ body.si-lock { overflow: hidden; }
 .sec-head-num { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .shn-big {
   font-family: var(--f-display); font-weight: 340;
-  font-size: clamp(4rem, 6.5vw, 6.4rem); line-height: 0.8;
+  /* v16: clamped further + line-height raised to prevent visual overflow into adjacent text at 641-900px */
+  font-size: clamp(3.6rem, 5.5vw, 6rem); line-height: 0.92;
   letter-spacing: 0.02em; color: rgba(201,169,110,0.38);
+  display: block; overflow: visible;
 }
 @supports (-webkit-text-stroke: 1px #000) {
-  .shn-big { color: transparent; -webkit-text-stroke: 1.1px rgba(201,169,110,0.6); }
+  .shn-big { color: transparent; -webkit-text-stroke: 1px rgba(201,169,110,0.55); }
 }
 .sec-cream .shn-big { color: rgba(6,111,108,0.32); }
 @supports (-webkit-text-stroke: 1px #000) {
-  .sec-cream .shn-big { color: transparent; -webkit-text-stroke: 1.1px rgba(6,111,108,0.48); }
+  .sec-cream .shn-big { color: transparent; -webkit-text-stroke: 1px rgba(6,111,108,0.44); }
+}
+/* v16 tablet: single-col sec-head, shrink numeral so it stays decorative not dominant */
+@media (max-width: 900px) and (min-width: 641px) {
+  .shn-big { font-size: clamp(2.6rem, 3.8vw, 3.4rem); line-height: 1; }
 }
 .shn-of {
   font-family: var(--f-body); font-size: 0.6rem; font-weight: 600;
@@ -3690,6 +3659,92 @@ body.si-lock { overflow: hidden; }
   color: rgba(250,247,242,0.35); padding-left: 5px;
 }
 .sec-cream .shn-of { color: rgba(3,43,41,0.38); }
+
+/* =====================================================
+   v16 · EDITORIAL MICRO-GRAPHIC VOCABULARY
+   Numbered index strips · hairline rules with micro-labels ·
+   stat tick marks · editorial figure captions · keylines.
+   Print-luxury handcrafted language. Consistent across pages.
+   ===================================================== */
+
+/* Numbered index strip — runs across top, thin gold hairlines, index number + label */
+.ed-index {
+  display: flex; align-items: center;
+  margin-bottom: 52px;
+  border-top: 1px solid rgba(201,169,110,0.22);
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+  padding: 9px 0;
+}
+.ed-index-num {
+  font-family: var(--f-body); font-size: 0.54rem; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); padding-right: 16px;
+  border-right: 1px solid rgba(201,169,110,0.28);
+  margin-right: 16px; white-space: nowrap;
+}
+.ed-index-label {
+  font-family: var(--f-body); font-size: 0.54rem; font-weight: 500;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: rgba(250,247,242,0.35);
+}
+.sec-cream .ed-index { border-top-color: rgba(3,43,41,0.14); border-bottom-color: rgba(3,43,41,0.07); }
+.sec-cream .ed-index-label { color: rgba(3,43,41,0.35); }
+.sec-cream .ed-index-num { border-right-color: rgba(3,43,41,0.18); color: var(--teal); }
+
+/* Hairline rule with centered small-caps micro-label */
+.rule-label {
+  display: flex; align-items: center; gap: 16px;
+  margin: 44px 0;
+}
+.rule-label::before, .rule-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(201,169,110,0.22);
+}
+.rule-label span {
+  font-family: var(--f-body); font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: rgba(201,169,110,0.5); white-space: nowrap;
+}
+.sec-cream .rule-label::before, .sec-cream .rule-label::after { background: rgba(3,43,41,0.14); }
+.sec-cream .rule-label span { color: rgba(3,43,41,0.38); }
+
+/* Stat tick marks — small horizontal dashes that visually quantify a stat */
+.stat-ticks { display: flex; align-items: center; gap: 3px; margin-bottom: 10px; }
+.stat-tick { width: 10px; height: 2px; background: var(--gold); }
+.stat-tick.dim { background: rgba(201,169,110,0.2); }
+.sec-cream .stat-tick { background: var(--teal); }
+.sec-cream .stat-tick.dim { background: rgba(6,111,108,0.18); }
+
+/* Editorial figure caption */
+.fig-cap {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-top: 14px; padding-top: 11px;
+  border-top: 1px solid rgba(201,169,110,0.2);
+}
+.fig-cap-idx {
+  font-family: var(--f-display); font-style: italic;
+  font-size: 0.68rem; color: var(--gold); flex-shrink: 0; line-height: 1;
+}
+.fig-cap-text {
+  font-family: var(--f-body); font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.04em; color: rgba(250,247,242,0.45); line-height: 1.5;
+}
+.sec-cream .fig-cap { border-top-color: rgba(3,43,41,0.12); }
+.sec-cream .fig-cap-text { color: rgba(3,43,41,0.5); }
+.sec-cream .fig-cap-idx { color: var(--teal); }
+
+/* Asymmetric keyline accents */
+.keyline-left {
+  width: 52px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 28px 0;
+}
+.keyline-center {
+  width: 80px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 28px auto;
+}
+.sec-cream .keyline-left { background: linear-gradient(to right, var(--teal), transparent); opacity: 0.45; }
 
 /* ---- gold corner brackets on media frames ---- */
 .ba-frame::before, .v8-frame-media::before, .mx-frame-media::before, .reel-embed-frame::before {

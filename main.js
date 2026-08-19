@@ -329,19 +329,19 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', kick, { once: true, passive: true });
 });
 
-/* ── v15: site intro, page frame, editorial numerals ── */
+/* ── v16: site intro (editorial restrained — under 2s), page frame, editorial numerals ── */
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* full-screen intro */
+  /* full-screen intro — wordmark + gold rule + tagline, ~1.8s total */
   const intro = document.getElementById('siteIntro');
   if (intro && !intro.classList.contains('si-skip') && !reduceMotion) {
     document.body.classList.add('si-lock');
-    setTimeout(() => intro.classList.add('si-exit'), 2500);
+    setTimeout(() => intro.classList.add('si-exit'), 1350);
     setTimeout(() => {
       intro.classList.add('si-done');
       document.body.classList.remove('si-lock');
-    }, 3650);
+    }, 1820);
   } else if (intro) {
     intro.classList.add('si-done');
   }
