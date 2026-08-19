@@ -2411,14 +2411,14 @@ p  { font-size: 1.05rem; line-height: 1.82; }
   justify-content: space-between;
   gap: 16px;
   padding: 7px 0;
-  border-bottom: 1px solid rgba(201,169,110,0.08);
+  border-bottom: 1px solid rgba(201,169,110,0.18);
   font-family: var(--f-body);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: rgba(250,247,242,0.55);
+  color: rgba(250,247,242,0.85);
 }
 .footer-hours div:last-child { border-bottom: none; }
-.footer-hours .fh-closed { color: rgba(250,247,242,0.28); font-style: italic; }
+.footer-hours .fh-closed { color: rgba(250,247,242,0.5); font-style: italic; }
 
 .hours-table { border-top: 1px solid rgba(3,43,41,0.14); }
 .hours-table .hrow {
@@ -3248,8 +3248,11 @@ h1 em, h2 em, h3 em, h4 em { font-style: italic; color: inherit; }
 }
 .contact-info-item .val a:hover { color: var(--gold); }
 
-/* --- hours on dark --- */
-.hours-table.hours-on-dark .day { color: rgba(250,247,242,0.5); }
+/* --- hours on dark: high contrast (v17 fix — was invisible) --- */
+.hours-table.hours-on-dark .day { color: var(--gold); }
+.hours-table.hours-on-dark .time { color: var(--cream); font-weight: 500; }
+.hours-table.hours-on-dark .time.closed { color: rgba(250,247,242,0.55); }
+.hours-table.hours-on-dark .hrow { border-bottom-color: rgba(201,169,110,0.28); }
 
 /* --- policy --- */
 .policy-num {
