@@ -337,11 +337,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const intro = document.getElementById('siteIntro');
   if (intro && !intro.classList.contains('si-skip') && !reduceMotion) {
     document.body.classList.add('si-lock');
-    setTimeout(() => intro.classList.add('si-exit'), 4700);
+    setTimeout(() => intro.classList.add('si-exit'), 4100);
     setTimeout(() => {
       intro.classList.add('si-done');
       document.body.classList.remove('si-lock');
-    }, 5300);
+    }, 4700);
   } else if (intro) {
     intro.classList.add('si-done');
   }
