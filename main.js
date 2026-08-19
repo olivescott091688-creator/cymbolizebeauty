@@ -379,7 +379,6 @@ document.addEventListener('DOMContentLoaded', () => {
           '<text class="ws-text"><textPath href="#' + id + '" startOffset="0">' + ringText + '</textPath></text>' +
         '</g>' +
         '<text class="ws-mark" x="50" y="60" text-anchor="middle">CB</text>' +
-        '<text class="ws-est" x="50" y="72" text-anchor="middle">ATELIER</text>' +
       '</svg>';
     return wrap;
   }
@@ -398,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
     band.className = 'cb-goldband';
     band.innerHTML =
       '<div class="cb-goldband-inner">' +
-        '<span>Hair Loss Atelier</span><i>&#9670;</i>' +
+        '<span>Hair Loss Specialist</span><i>&#9670;</i>' +
         '<span>Mesh Integration</span><i>&#9670;</i>' +
         '<span>Extensions</span><i>&#9670;</i>' +
         '<span>Las Vegas &middot; Nevada</span>' +
@@ -416,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const r = document.createElement('div');
     r.className = 'edge-spine edge-spine-r';
     r.setAttribute('aria-hidden', 'true');
-    r.textContent = 'Las Vegas · Hair Loss Atelier';
+    r.textContent = 'Las Vegas · Hair Loss Specialist';
     document.body.appendChild(l);
     document.body.appendChild(r);
   }
