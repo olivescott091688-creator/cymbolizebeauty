@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://cymbolizebeauty.com/services.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=20260818j" />
+  <link rel="stylesheet" href="styles.css?v=20260819a" />
   <style>
     /* ═══════════════════════════════════════════════════════════
        PREMIUM ACCORDION SERVICES PAGE
@@ -178,7 +178,7 @@
 
     .svc-trigger {
       display: grid;
-      grid-template-columns: 60px 1fr auto 60px;
+      grid-template-columns: 1fr auto 60px;
       align-items: center;
       gap: 32px;
       padding: 36px 24px;
@@ -325,7 +325,7 @@
 
     .svc-panel-inner {
       display: grid;
-      grid-template-columns: 60px 1fr 60px;
+      grid-template-columns: 1fr;
       gap: 32px;
       padding: 0 24px 56px;
       opacity: 0;
@@ -337,7 +337,7 @@
       transform: translateY(0);
     }
 
-    .svc-panel-spacer { display: block; }
+    .svc-panel-spacer { display: none; }
 
     .svc-panel-body {
       max-width: 720px;
@@ -492,7 +492,7 @@
       .svc-divider .line { max-width: 100px; }
 
       .svc-trigger {
-        grid-template-columns: 36px 1fr 36px;
+        grid-template-columns: 1fr 36px;
         gap: 18px;
         padding: 28px 8px;
       }
@@ -535,40 +535,16 @@
 <!-- ─── SITE INTRO ─────────────────────────────── -->
 <div class="site-intro" id="siteIntro" aria-hidden="true" role="presentation">
   <div class="si-stage">
-
-    <span class="si-folio">N&ordm; 01</span>
-    <span class="si-mono"><img src="logo.webp?v=20260818j" alt="" class="si-mono-img"></span>
-    <span class="si-eyebrow">Cymbolize</span>
-
-    <div class="si-band">
-      <span class="si-word">Beauty</span>
-    </div>
-
-    <div class="si-seal" aria-hidden="true">
-      <svg viewBox="0 0 100 100">
-        <defs><path id="siSealPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"></path></defs>
-        <circle class="si-seal-disc" cx="50" cy="50" r="46"></circle>
-        <g class="si-seal-spin">
-          <circle class="si-seal-ring" cx="50" cy="50" r="45.5"></circle>
-          <circle class="si-seal-ring" cx="50" cy="50" r="30"></circle>
-          <text class="si-seal-text"><textPath href="#siSealPath" startOffset="0">&middot; Cymbolize Beauty &middot; Las Vegas </textPath></text>
-        </g>
-        <text class="si-seal-mark" x="50" y="60" text-anchor="middle">CB</text>
-      </svg>
-    </div>
-
-    <div class="si-bot">
-      <span class="si-tags"><i>&#9670;</i> Las Vegas <i>&#9670;</i> Hair Loss Specialist <i>&#9670;</i> Mesh Integration <i>&#9670;</i></span>
-      <div class="si-orn" aria-hidden="true"></div>
-    </div>
+    <span class="si-mono"><img src="logo.webp?v=20260819a" alt="" class="si-mono-img"></span>
   </div>
 </div>
+
 <script>(function(){try{if(sessionStorage.getItem('cbIntroSeen')){document.getElementById('siteIntro').classList.add('si-skip');}else{sessionStorage.setItem('cbIntroSeen','1');}}catch(e){}})();</script>
 
 <!-- ─── NAVBAR ─────────────────────────────────── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="logo.webp?v=20260818j" alt="CymbolizeBeauty" class="nav-logo-img"></a>
+    <a href="index.html" class="nav-logo"><img src="logo.webp?v=20260819a" alt="CymbolizeBeauty" class="nav-logo-img"></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -587,16 +563,15 @@
 <!-- ─── FULL-SCREEN MENU ───────────────────────── -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mm-inner">
-    <span class="mm-eyebrow">Menu</span>
     <nav class="mm-links">
-      <a href="index.html"><span class="mm-num">01</span><span>Home</span></a>
-      <a href="about.html"><span class="mm-num">02</span><span>About</span></a>
-      <a href="services.html"><span class="mm-num">03</span><span>Services</span></a>
-      <a href="education.html"><span class="mm-num">04</span><span>Education</span></a>
-      <a href="gallery.html"><span class="mm-num">05</span><span>Gallery</span></a>
-      <a href="hair-loss.html"><span class="mm-num">06</span><span>Hair Loss</span></a>
-      <a href="faq.html"><span class="mm-num">07</span><span>FAQ</span></a>
-      <a href="contact.html"><span class="mm-num">08</span><span>Contact</span></a>
+      <a href="index.html"><span>Home</span></a>
+      <a href="about.html"><span>About</span></a>
+      <a href="services.html"><span>Services</span></a>
+      <a href="education.html"><span>Education</span></a>
+      <a href="gallery.html"><span>Gallery</span></a>
+      <a href="hair-loss.html"><span>Hair Loss</span></a>
+      <a href="faq.html"><span>FAQ</span></a>
+      <a href="contact.html"><span>Contact</span></a>
     </nav>
     <a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener" class="mm-book">Book an Appointment</a>
     <div class="mm-foot">
@@ -608,18 +583,11 @@
     </div>
   </div>
 </div>
-
 <!-- ─── DARK FULL-BLEED HERO ─────────────────── -->
 <section class="svc-hero grain">
   <div class="svc-hero-inner">
-    <div class="svc-hero-eyebrow">
-      <span class="num">№ 03</span>
-      <span>The Service Menu</span>
-      <span class="line"></span>
-      <span>2026 · Las Vegas</span>
-    </div>
-    <h1 class="reveal">Every service,<br><em>hair health first.</em></h1>
-    <p class="svc-hero-tag reveal delay-1">Twenty services, one philosophy. Each one built around what your hair actually needs — assessed by Cymonne, priced transparently, and matched to the live booking menu below. Tap any service to open its details.</p>
+    <h1 class="reveal">The full service menu.</h1>
+    <p class="svc-hero-tag reveal delay-1">Everything Cymonne offers, from Mesh Integration and extensions to color and styling. Prices are what you&rsquo;ll see when you book. Tap any service to read what it is and who it&rsquo;s for.</p>
     <div class="svc-hero-meta reveal delay-2">
       <div class="svc-hero-meta-item">
         <span class="k">Signature</span>
@@ -644,14 +612,13 @@
     <!-- ═══ CATEGORY 01 · CONSULTATIONS ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 01 · Consultations</span>
+        <span class="svc-cat-label">Consultations</span>
         <h3 class="svc-cat-title">Where every journey begins.</h3>
         <span class="svc-cat-count">Two options</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">01</span>
           <span class="svc-name-wrap">
             <span class="svc-name">FaceTime Consultation</span>
             <span class="svc-tags"><span>30 Min</span><span class="svc-tag-dot"></span><span>Video Call</span><span class="svc-tag-dot"></span><span>No Deposit</span></span>
@@ -682,7 +649,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">02</span>
           <span class="svc-name-wrap">
             <span class="svc-name">In-Person Consultation</span>
             <span class="svc-tags"><span>60 Min</span><span class="svc-tag-dot"></span><span>Studio Visit</span><span class="svc-tag-dot"></span><span>No Deposit</span></span>
@@ -720,14 +686,13 @@
     <!-- ═══ CATEGORY 02 · MESH INTEGRATION ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 02 · Mesh Integration</span>
+        <span class="svc-cat-label">Mesh Integration</span>
         <h3 class="svc-cat-title">Cymonne's signature specialty.</h3>
         <span class="svc-cat-count">Four services</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">03</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Mesh Integration</span>
             <span class="svc-tags"><span class="svc-tag--signature">Signature Service</span><span class="svc-tag-dot"></span><span>Consultation Required</span><span class="svc-tag-dot"></span><span>$100 Deposit</span></span>
@@ -759,7 +724,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">04</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Meshless Integration</span>
             <span class="svc-tags"><span>Consultation Required</span><span class="svc-tag-dot"></span><span>Mesh-Free Base</span></span>
@@ -790,7 +754,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">05</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Mesh Integration Adjustment</span>
             <span class="svc-tags"><span>Existing Clients</span><span class="svc-tag-dot"></span><span>Every 4–6 Weeks</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -821,7 +784,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">06</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Mesh Integration Realignment</span>
             <span class="svc-tags"><span>Existing Clients</span><span class="svc-tag-dot"></span><span>Every 6 Months</span><span class="svc-tag-dot"></span><span>$100 Deposit</span></span>
@@ -869,14 +831,13 @@
     <!-- ═══ CATEGORY 03 · HIDDEN BEAD EXTENSIONS ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 03 · Hidden Bead Extensions</span>
+        <span class="svc-cat-label">Hidden Bead Extensions</span>
         <h3 class="svc-cat-title">Discreet volume, no damage.</h3>
         <span class="svc-cat-count">Two services</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">07</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Hidden Bead Extensions</span>
             <span class="svc-tags"><span>Silicone-Lined Beads</span><span class="svc-tag-dot"></span><span>No Glue · No Heat</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -907,7 +868,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">08</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Hidden Bead Move-Up</span>
             <span class="svc-tags"><span>Every 6–8 Weeks</span><span class="svc-tag-dot"></span><span>Existing Rows</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -945,14 +905,13 @@
     <!-- ═══ CATEGORY 04 · SPECIALTY & BESPOKE ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 04 · Specialty &amp; Bespoke</span>
+        <span class="svc-cat-label">Specialty &amp; Bespoke</span>
         <h3 class="svc-cat-title">Made specifically for you.</h3>
         <span class="svc-cat-count">Five services</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">09</span>
           <span class="svc-name-wrap">
             <span class="svc-name">K-Tips</span>
             <span class="svc-tags"><span>Individual Strands</span><span class="svc-tag-dot"></span><span>Consultation Required</span><span class="svc-tag-dot"></span><span>$150 Deposit</span></span>
@@ -983,7 +942,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">10</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Custom Wig</span>
             <span class="svc-tags"><span>Fully Bespoke</span><span class="svc-tag-dot"></span><span>Consultation Required</span><span class="svc-tag-dot"></span><span>$150 Deposit</span></span>
@@ -1014,7 +972,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">11</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Magic Part Weave</span>
             <span class="svc-tags"><span>Interlocked at Root</span><span class="svc-tag-dot"></span><span>Raw Hair Required</span><span class="svc-tag-dot"></span><span>$100 Deposit</span></span>
@@ -1045,7 +1002,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">12</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Full Sew-In</span>
             <span class="svc-tags"><span>Braided Foundation</span><span class="svc-tag-dot"></span><span>Full Coverage</span><span class="svc-tag-dot"></span><span>$100 Deposit</span></span>
@@ -1076,7 +1032,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">13</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Hair Extensions Removal</span>
             <span class="svc-tags"><span>Any Method</span><span class="svc-tag-dot"></span><span>Includes Cleanse</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1114,14 +1069,13 @@
     <!-- ═══ CATEGORY 05 · COLOR & CHEMICAL ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 05 · Color &amp; Chemical</span>
+        <span class="svc-cat-label">Color &amp; Chemical</span>
         <h3 class="svc-cat-title">Precision color, protected hair.</h3>
         <span class="svc-cat-count">Four services</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">14</span>
           <span class="svc-name-wrap">
             <span class="svc-name">All-Over Color</span>
             <span class="svc-tags"><span>Single Process</span><span class="svc-tag-dot"></span><span>Includes Style</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1152,7 +1106,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">15</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Color Retouch</span>
             <span class="svc-tags"><span>Roots Only</span><span class="svc-tag-dot"></span><span>Includes Style</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1183,7 +1136,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">16</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Balayage / Highlights</span>
             <span class="svc-tags"><span>Hand-Painted or Foiled</span><span class="svc-tag-dot"></span><span>Includes Style</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1214,7 +1166,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">17</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Brazilian Blowout</span>
             <span class="svc-tags"><span>Smoothing Treatment</span><span class="svc-tag-dot"></span><span>Lasts 10–12 Weeks</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1252,14 +1203,13 @@
     <!-- ═══ CATEGORY 06 · STYLING ═══ -->
     <div class="svc-category">
       <div class="svc-cat-head reveal">
-        <span class="svc-cat-label">№ 06 · Styling</span>
+        <span class="svc-cat-label">Styling</span>
         <h3 class="svc-cat-title">Fresh cuts and polished finishes.</h3>
         <span class="svc-cat-count">Three services</span>
       </div>
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">18</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Haircut &amp; Blowout</span>
             <span class="svc-tags"><span>Precision Cut</span><span class="svc-tag-dot"></span><span>Blow-Dry Finish</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1290,7 +1240,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">19</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Silk Press</span>
             <span class="svc-tags"><span>Natural to Sleek</span><span class="svc-tag-dot"></span><span>No Chemicals</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1321,7 +1270,6 @@
 
       <div class="svc-row" data-svc>
         <button class="svc-trigger" aria-expanded="false">
-          <span class="svc-num">20</span>
           <span class="svc-name-wrap">
             <span class="svc-name">Blowout</span>
             <span class="svc-tags"><span>Wash + Style</span><span class="svc-tag-dot"></span><span>Round-Brush Finish</span><span class="svc-tag-dot"></span><span>$50 Deposit</span></span>
@@ -1362,7 +1310,6 @@
   <span class="ghost-letter ghost-tl">O</span>
   <div class="container">
     <div class="sec-head">
-      <div class="sec-head-num reveal">02<span class="slash">/</span>08</div>
       <div class="sec-head-title reveal delay-1">
         <span class="label">Why CymbolizeBeauty</span>
         <h2 style="margin-top: 24px;">What makes us<br><em>different.</em></h2>
@@ -1383,7 +1330,7 @@
       <div class="process-step reveal delay-2">
         <div class="process-num">03</div>
         <h4>Hair Health Is the Service</h4>
-        <p>As Miri Pearson noted: "She focused on the health of my natural hair, not just the style. I left with my hair in way better condition than when I came." That outcome isn't accidental — it's the approach every client receives.</p>
+        <p>Cymonne works to leave your natural hair in better condition than she found it. Every install, color, and system is chosen to protect the hair underneath, not just to change how it looks today.</p>
       </div>
     </div>
     <div class="detail-cards" style="margin-top: 64px;">
@@ -1425,7 +1372,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="index.html" class="footer-logo"><img src="logo.webp?v=20260818j" alt="Cymbolize Beauty" class="footer-logo-img"></a>
+        <a href="index.html" class="footer-logo"><img src="logo.webp?v=20260819a" alt="Cymbolize Beauty" class="footer-logo-img"></a>
         <p class="footer-tag">"Giving women back the version of themselves hair loss tried to erase."</p>
         <div class="footer-social">
           <a href="https://instagram.com/cymbolizebeauty" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
@@ -1483,7 +1430,7 @@
 
 <div class="cur-dot" id="curDot"></div>
 <div class="cur-ring" id="curRing"></div>
-<script src="main.js?v=20260818j"></script>
+<script src="main.js?v=20260819a"></script>
 
 <!-- ─── ACCORDION SCRIPT ─────────────────────── -->
 <script>

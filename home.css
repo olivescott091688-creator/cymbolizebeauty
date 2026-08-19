@@ -304,7 +304,7 @@
 .mx-dropcap-gold::first-letter { color: var(--gold); }
 
 /* ============================================================
-   N° 01 — SERVICES (editorial row system)
+   SERVICES (editorial row system)
    ============================================================ */
 .sv-section {
   background: var(--ink);
@@ -533,7 +533,7 @@
 }
 
 /* ============================================================
-   N° 02 — THE FOUNDER
+   THE FOUNDER
    ============================================================ */
 .mx-founder-grid {
   display: grid;
@@ -597,7 +597,7 @@
 }
 
 /* ============================================================
-   N° 03 — WHO SHE HELPS (teal)
+   WHO SHE HELPS (teal)
    ============================================================ */
 .mx-who-grid {
   display: grid;
@@ -646,7 +646,7 @@
 }
 
 /* ============================================================
-   N° 04 — THE PROCESS (cream, staggered)
+   THE PROCESS (cream, staggered)
    ============================================================ */
 .mx-steps {
   display: grid;
@@ -686,7 +686,7 @@
 .mx-step-3 { margin-top: 116px; }
 
 /* ============================================================
-   N° 05 — HER STORY (ink, intimate)
+   HER STORY (ink, intimate)
    ============================================================ */
 .mx-story { text-align: center; }
 .mx-story-ghost {
@@ -728,7 +728,7 @@
 }
 
 /* ============================================================
-   N° 06 — REVIEWS (editorial strips, no cards)
+   REVIEWS (editorial strips, no cards)
    ============================================================ */
 .rv-section {
   background: var(--cream);
@@ -830,7 +830,7 @@
 }
 
 /* ============================================================
-   N° 07 — EDUCATION (teal)
+   EDUCATION (teal)
    ============================================================ */
 .mx-edu-grid {
   display: grid;
@@ -870,7 +870,7 @@
 }
 
 /* ============================================================
-   N° 08 — FOLLOW ALONG (typographic band, no cards)
+   FOLLOW ALONG (typographic band, no cards)
    ============================================================ */
 .fa-section {
   background: var(--ink);
@@ -1434,3 +1434,15 @@ html.motion .ct-rule.visible { transform: scaleY(1); }
 /* v13: media-only wrapper so the offset frame never crosses the caption */
 .mx-frame-media { position: relative; }
 html.motion .mx-frame-media { overflow: visible; }
+
+/* =====================================================
+   v20 · DE-VIBE PASS (homepage)
+   Drop remaining numbered-list markers + tracked eyebrows.
+   ===================================================== */
+.mx-marker,
+.mx-who-num,
+.mx-edu-num { display: none !important; }
+
+/* collapse the numeral columns left behind */
+.mx-who-item { grid-template-columns: 1fr !important; gap: 0 !important; }
+.mx-edu-line { grid-template-columns: 1fr !important; gap: 0 !important; }

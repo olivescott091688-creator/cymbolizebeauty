@@ -3942,3 +3942,88 @@ body.si-lock { overflow: hidden; }
   .fab-btn svg { width: 17px; height: 17px; }
   .fab-btn::after { display: none; }
 }
+
+/* =====================================================
+   v20 · DE-VIBE PASS
+   Removes editorial/template flourishes flagged by client:
+   folio numerals, tracked-caps eyebrows, seals, spines,
+   gold contrast band, ornament dividers, ghost numerals.
+   Plain, confident salon voice. Palette + fonts unchanged.
+   ===================================================== */
+
+/* Injected/decorative template flourishes — never render */
+.page-frame,
+.wax-seal,
+.cb-colophon,
+.cb-goldband,
+.edge-spine,
+.sec-divider,
+.marquee,
+.rule-label,
+.hero-eyebrow,
+.qb-ghost-mark,
+.mx-story-ghost,
+.mx-step-ghost { display: none !important; }
+
+/* CTA ornament divider (line · diamond · line) above every CTA */
+.cta-inner { padding-top: 0 !important; }
+.cta-inner::before,
+.cta-inner::after { content: none !important; display: none !important; }
+
+/* Folio numerals + numbered-list section markers */
+.sec-head-num,
+.condition-num,
+.process-num,
+.policy-num,
+.svc-num { display: none !important; }
+
+/* Section header stands alone (numeral column removed) */
+.sec-head { grid-template-columns: 1fr !important; gap: 0 !important; }
+
+/* Conditions list — collapse the numeral column */
+.condition { grid-template-columns: 1fr 1.9fr !important; gap: 32px !important; }
+@media (max-width: 900px) { .condition { grid-template-columns: 1fr !important; } }
+/* items that were numeral + description only → full-width description */
+.condition:not(:has(.condition-name)) { grid-template-columns: 1fr !important; }
+.condition:not(:has(.condition-name)) .condition-desc { grid-column: 1 / -1 !important; }
+
+/* Policy items — collapse the numeral column */
+.policy-item { grid-template-columns: 1fr !important; }
+
+/* Eyebrow / kicker labels → quiet, plain, normal-case lead-in */
+.label {
+  font-family: var(--f-body) !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  color: var(--gold) !important;
+  gap: 0 !important;
+}
+.label::before { display: none !important; }
+.sec-cream .label { color: var(--teal) !important; }
+
+/* Services + homepage category labels → normal-case, minimal tracking */
+.svc-cat-label,
+.svc-hero-eyebrow,
+.sv-sig-label,
+.sv-cat-name {
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Mobile menu — plain links (no "Menu" eyebrow, no numerals) */
+.mm-eyebrow { display: none !important; }
+.mm-links { margin-top: auto; }
+
+/* Homepage hero subline */
+.hm-hero-sub {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.9vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(250,247,242,0.82);
+  max-width: 30em;
+  margin: 0 0 38px;
+}

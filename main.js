@@ -337,89 +337,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const intro = document.getElementById('siteIntro');
   if (intro && !intro.classList.contains('si-skip') && !reduceMotion) {
     document.body.classList.add('si-lock');
-    setTimeout(() => intro.classList.add('si-exit'), 4100);
+    /* simple: logo fades in, brief hold, fades out — under 2.5s total */
+    setTimeout(() => intro.classList.add('si-exit'), 1850);
     setTimeout(() => {
       intro.classList.add('si-done');
       document.body.classList.remove('si-lock');
-    }, 4700);
+    }, 2350);
   } else if (intro) {
     intro.classList.add('si-done');
   }
-
-  /* fixed luxury page frame */
-  const pf = document.createElement('div');
-  pf.className = 'page-frame';
-  pf.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(pf);
-
-  /* giant outlined index numerals: "02/08" → 02 + "of 08" */
-  document.querySelectorAll('.sec-head-num').forEach(el => {
-    const m = el.textContent.replace(/\s+/g, '').match(/^(\d+)\/(\d+)$/);
-    if (m) el.innerHTML = '<span class="shn-big">' + m[1] + '</span><span class="shn-of">of ' + m[2] + '</span>';
-  });
 });
 
-/* ── v17: sitewide graphic detail — wax seal, gold contrast band, edge spines ── */
-document.addEventListener('DOMContentLoaded', () => {
-  const NS = 'http://www.w3.org/2000/svg';
-
-  /* reusable gold wax seal (unique textPath id per instance) */
-  let sealSeq = 0;
-  function waxSeal(ringText) {
-    const id = 'wsPath' + (++sealSeq);
-    const wrap = document.createElement('div');
-    wrap.className = 'wax-seal';
-    wrap.setAttribute('aria-hidden', 'true');
-    wrap.innerHTML =
-      '<svg viewBox="0 0 100 100">' +
-        '<defs><path id="' + id + '" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"></path></defs>' +
-        '<circle class="ws-ring" cx="50" cy="50" r="47"></circle>' +
-        '<circle class="ws-ring-2" cx="50" cy="50" r="29"></circle>' +
-        '<g class="ws-spin">' +
-          '<text class="ws-text"><textPath href="#' + id + '" startOffset="0">' + ringText + '</textPath></text>' +
-        '</g>' +
-        '<text class="ws-mark" x="50" y="60" text-anchor="middle">CB</text>' +
-      '</svg>';
-    return wrap;
-  }
-
-  /* gold contrast colophon band — injected before the footer */
-  const footer = document.getElementById('footer');
-  if (footer && !document.querySelector('.cb-colophon')) {
-    const col = document.createElement('section');
-    col.className = 'cb-colophon';
-    col.setAttribute('aria-hidden', 'true');
-    const sealWrap = document.createElement('div');
-    sealWrap.className = 'cb-seal-wrap';
-    sealWrap.appendChild(waxSeal('· CYMBOLIZE BEAUTY · LAS VEGAS · NEVADA '));
-    col.appendChild(sealWrap);
-    const band = document.createElement('div');
-    band.className = 'cb-goldband';
-    band.innerHTML =
-      '<div class="cb-goldband-inner">' +
-        '<span>Hair Loss Specialist</span><i>&#9670;</i>' +
-        '<span>Mesh Integration</span><i>&#9670;</i>' +
-        '<span>Extensions</span><i>&#9670;</i>' +
-        '<span>Las Vegas &middot; Nevada</span>' +
-      '</div>';
-    col.appendChild(band);
-    footer.parentNode.insertBefore(col, footer);
-  }
-
-  /* editorial magazine spines on the screen edges (desktop only via CSS) */
-  if (!document.querySelector('.edge-spine')) {
-    const l = document.createElement('div');
-    l.className = 'edge-spine edge-spine-l';
-    l.setAttribute('aria-hidden', 'true');
-    l.textContent = 'Cymbolize Beauty';
-    const r = document.createElement('div');
-    r.className = 'edge-spine edge-spine-r';
-    r.setAttribute('aria-hidden', 'true');
-    r.textContent = 'Las Vegas · Hair Loss Specialist';
-    document.body.appendChild(l);
-    document.body.appendChild(r);
-  }
-});
+/* v20: sitewide graphic flourishes (wax seal, gold contrast band, edge spines)
+   removed per client — read as vibe-coded template ornament. */
 
 /* ── v18: circular action rail (book / contact / review / accessibility) ── */
 document.addEventListener('DOMContentLoaded', () => {
