@@ -4035,9 +4035,7 @@ body.si-lock { overflow: hidden; }
 /* =====================================================
    v21 · Sora headings (client pick) + action-rail scroll reveal
    ===================================================== */
-/* Sora on the homepage hero ONLY — rest of site keeps original fonts */
-.hm-hero-h1 { font-family: 'Sora', var(--f-body) !important; letter-spacing: -0.015em; }
-.hm-hero-sub { font-family: 'Sora', var(--f-body) !important; }
+/* Hero uses its own serif treatment (see home.css v22) */
 
 /* Rail hidden on first view; slides in after scrolling past the hero */
 .fab-rail {
