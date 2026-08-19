@@ -3606,17 +3606,6 @@ body.si-lock { overflow: hidden; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 
-/* corner crop / registration marks (draw in first) */
-.si-crop { position: absolute; width: 24px; height: 24px; opacity: 0;
-  animation: siMark 0.5s ease 0.05s forwards; }
-.si-crop::before, .si-crop::after { content: ''; position: absolute; background: var(--gold); }
-.si-crop::before { width: 100%; height: 1px; top: 0; }
-.si-crop::after  { width: 1px; height: 100%; left: 0; }
-.si-crop-tl { top: -30px; left: -26px; }
-.si-crop-tr { top: -30px; right: -26px; transform: scaleX(-1); }
-.si-crop-bl { bottom: -30px; left: -26px; transform: scaleY(-1); }
-.si-crop-br { bottom: -30px; right: -26px; transform: scale(-1); }
-@keyframes siMark { to { opacity: 0.62; } }
 
 /* top ink zone: folio + monogram + eyebrow */
 .si-folio {
@@ -3633,9 +3622,9 @@ body.si-lock { overflow: hidden; }
   filter: saturate(0.5) brightness(1.22) contrast(1.02); }
 @keyframes siUnveil { to { clip-path: inset(0 0 0 0); } }
 .si-eyebrow {
-  display: block; text-align: center; margin: 14px auto 0;
-  font-family: var(--f-body); font-size: 0.6rem; font-weight: 600;
-  letter-spacing: 0.52em; text-transform: uppercase; text-indent: 0.52em;
+  display: block; text-align: center; margin: 16px auto 0;
+  font-family: var(--f-body); font-size: 1.05rem; font-weight: 500;
+  letter-spacing: 0.5em; text-transform: uppercase; text-indent: 0.5em;
   color: var(--cream);
   opacity: 0; animation: siFade 0.55s ease 0.8s forwards;
 }
@@ -3654,7 +3643,7 @@ body.si-lock { overflow: hidden; }
 .si-word {
   display: block; text-align: center;
   font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-  font-size: clamp(3.4rem, 12vw, 7.4rem); line-height: 0.86;
+  font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 0.92;
   letter-spacing: -0.01em; color: var(--ink);
   clip-path: inset(0 100% 0 0);              /* masked L→R reveal */
   animation: siWord 0.82s var(--ease) 0.98s forwards;
@@ -3673,7 +3662,7 @@ body.si-lock { overflow: hidden; }
 /* gold seal roundel — circular text, stamps the band's right edge */
 .si-seal {
   position: absolute; top: 50%; right: -30px;
-  width: 92px; height: 92px; transform: translateY(-50%) scale(0.55) rotate(-22deg);
+  width: 92px; height: 92px; transform: translateY(-50%) scale(0.82) rotate(-8deg);
   opacity: 0; animation: siSeal 0.78s var(--ease) 1.4s forwards;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,0.28));
 }
@@ -3721,11 +3710,8 @@ body.si-lock { overflow: hidden; }
   .si-stage { width: 90vw; }
   .si-seal { display: none; }
   .si-band { padding: 24px 20px 26px; margin: 14px 0 16px; }
-  .si-word { font-size: clamp(3rem, 21vw, 5.4rem); }
-  .si-eyebrow { font-size: 0.5rem; letter-spacing: 0.42em; text-indent: 0.42em; }
-  .si-crop { width: 18px; height: 18px; }
-  .si-crop-tl, .si-crop-tr { top: -22px; }
-  .si-crop-bl, .si-crop-br { bottom: -22px; }
+  .si-word { font-size: clamp(1.9rem, 11vw, 2.9rem); }
+  .si-eyebrow { font-size: 0.78rem; letter-spacing: 0.4em; text-indent: 0.4em; }
   .si-tags { font-size: 0.44rem; letter-spacing: 0.24em; gap: 9px; }
 }
 
@@ -3853,32 +3839,7 @@ body.si-lock { overflow: hidden; }
 }
 .sec-cream .keyline-left { background: linear-gradient(to right, var(--teal), transparent); opacity: 0.45; }
 
-/* ---- gold corner brackets on media frames ---- */
-.ba-frame::before, .v8-frame-media::before, .mx-frame-media::before, .reel-embed-frame::before {
-  content: ''; position: absolute; inset: -9px; z-index: 3; pointer-events: none;
-  background:
-    linear-gradient(var(--gold), var(--gold)) top left / 24px 1px,
-    linear-gradient(var(--gold), var(--gold)) top left / 1px 24px,
-    linear-gradient(var(--gold), var(--gold)) bottom right / 24px 1px,
-    linear-gradient(var(--gold), var(--gold)) bottom right / 1px 24px;
-  background-repeat: no-repeat;
-}
-
-/* ---- detail cards: full corner set ---- */
-.detail-card::before {
-  width: auto; height: auto; inset: 0; top: 0; left: 0;
-  background:
-    linear-gradient(var(--gold), var(--gold)) top left / 34px 1px,
-    linear-gradient(var(--gold), var(--gold)) top left / 1px 34px;
-  background-repeat: no-repeat;
-}
-.detail-card::after {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background:
-    linear-gradient(var(--gold), var(--gold)) bottom right / 34px 1px,
-    linear-gradient(var(--gold), var(--gold)) bottom right / 1px 34px;
-  background-repeat: no-repeat;
-}
+/* v17e: corner brackets removed per client — frames keep clean hairline borders only */
 
 /* ---- CTA ornament divider (line · diamond · line) ---- */
 .cta-inner { padding-top: 58px; }
