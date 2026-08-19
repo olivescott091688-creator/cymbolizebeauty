@@ -3963,7 +3963,10 @@ body.si-lock { overflow: hidden; }
 .hero-eyebrow,
 .qb-ghost-mark,
 .mx-story-ghost,
-.mx-step-ghost { display: none !important; }
+.mx-step-ghost,
+.svc-divider,
+.qb-rule-top,
+.qb-rule-bottom { display: none !important; }
 
 /* CTA ornament divider (line · diamond · line) above every CTA */
 .cta-inner { padding-top: 0 !important; }
