@@ -24,22 +24,39 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: var(--ink);
+      /* PLACEHOLDER — swap in client-provided hero photo when it arrives */
+      background:
+        radial-gradient(ellipse 90% 70% at 50% 110%, rgba(201,169,110,0.14), transparent 60%),
+        linear-gradient(180deg, #032B29 0%, #043835 55%, #032B29 100%);
     }
-    .sp-hero-img {
+    .sp-hero::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
-    }
-    .sp-hero-veil {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(3,43,41,0.55) 0%, rgba(3,43,41,0.68) 100%);
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 72px;
+      background: linear-gradient(180deg, rgba(201,169,110,0), rgba(201,169,110,0.7));
       z-index: 1;
+    }
+    .sp-hero-orn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .sp-hero-orn .line {
+      width: 54px;
+      height: 1px;
+      background: rgba(201,169,110,0.55);
+    }
+    .sp-hero-orn .diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.85;
     }
     .sp-hero-content {
       position: relative;
@@ -271,8 +288,33 @@
       margin: 0 auto 40px;
     }
 
+    /* ─── Elegant CTA button (page-scoped) ─── */
+    .sp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--f-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 19px 44px;
+      border: 1px solid rgba(250,247,242,0.45);
+      background: transparent;
+      transition: border-color 0.45s ease, color 0.45s ease, background 0.45s ease, letter-spacing 0.45s ease;
+    }
+    .sp-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-2);
+      background: rgba(201,169,110,0.06);
+      letter-spacing: 0.4em;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 900px) {
+      .sp-btn { padding: 16px 32px; letter-spacing: 0.28em; }
       .sp-hero { min-height: 64vh; }
       .sp-hero-content { padding: 140px 20px 80px; }
       .sp-intro { padding: 90px 24px 50px; }
@@ -339,16 +381,15 @@
   </div>
 </div>
 
-<!-- ─── PHOTO HERO ─────────────────────────────── -->
-<section class="sp-hero">
-  <img class="sp-hero-img" src="hero.jpg" alt="Inside the CymbolizeBeauty studio in Las Vegas" />
-  <div class="sp-hero-veil" aria-hidden="true"></div>
+<!-- ─── HERO (photo placeholder — client sending new image) ─── -->
+<section class="sp-hero grain">
   <div class="sp-hero-content">
     <p class="sp-hero-eyebrow reveal">CymbolizeBeauty &middot; Las Vegas</p>
     <h1 class="reveal delay-1">Services &amp; Pricing</h1>
-    <p class="sp-hero-sub reveal delay-2">Hair replacement and hair extensions &mdash; by consultation and appointment only.</p>
+    <div class="sp-hero-orn reveal delay-2" aria-hidden="true"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+    <p class="sp-hero-sub reveal delay-2">Hair replacement and hair extensions for men and women &mdash; by consultation and appointment only.</p>
     <div class="reveal delay-3">
-      <a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Consultation</a>
+      <a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener" class="sp-btn">Book a Consultation</a>
     </div>
   </div>
 </section>
@@ -356,8 +397,8 @@
 <!-- ─── BIG INTRO ──────────────────────────────── -->
 <section class="sp-intro">
   <div class="sp-intro-inner">
-    <h2 class="reveal">A private studio with one specialty: <em>giving women their hair back.</em></h2>
-    <p class="reveal delay-1">CymbolizeBeauty is a private Las Vegas studio where every appointment gets Cymonne&rsquo;s undivided attention &mdash; no double-booking, no rushed work. She works exclusively in <strong>hair replacement and hair extensions</strong>, with a focus on women experiencing hair loss.</p>
+    <h2 class="reveal">A private studio with one specialty: <em>giving you your hair back.</em></h2>
+    <p class="reveal delay-1">CymbolizeBeauty is a private Las Vegas studio where every appointment gets Cymonne&rsquo;s undivided attention &mdash; no double-booking, no rushed work. She works exclusively in <strong>hair replacement and hair extensions</strong> for men and women experiencing hair loss.</p>
     <p class="reveal delay-2">Because every system is custom-built around your hair, your density, and your goals, every service begins with a consultation &mdash; and every quote is personal. Nothing here comes off a menu.</p>
   </div>
 </section>
@@ -412,7 +453,7 @@
     <div class="sp-item reveal">
       <h3>Meshless Integration</h3>
       <p class="sp-price">Price upon consultation</p>
-      <p>The same seamless integration concept, without the mesh base. Human hair is integrated directly with your own for full, natural-looking coverage &mdash; ideal for women who want a lighter, mesh-free foundation. Cymonne helps you decide between mesh and meshless at your consultation.</p>
+      <p>The same seamless integration concept, without the mesh base. Human hair is integrated directly with your own for full, natural-looking coverage &mdash; ideal for anyone who wants a lighter, mesh-free foundation. Cymonne helps you decide between mesh and meshless at your consultation.</p>
       <div class="sp-hairline"></div>
     </div>
 
@@ -516,7 +557,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          No — and that's by design. CymbolizeBeauty specializes exclusively in hair replacement and hair extensions, with a focus on women experiencing hair loss. Specializing in one thing means every hour in the chair is spent on the work Cymonne does best.
+          No — and that's by design. CymbolizeBeauty specializes exclusively in hair replacement and hair extensions for men and women experiencing hair loss. Specializing in one thing means every hour in the chair is spent on the work Cymonne does best.
         </div>
       </div>
 
@@ -542,7 +583,7 @@
     <h2 class="reveal">Consultations are <em>the first step.</em></h2>
     <p class="reveal delay-1">Start with a $50 FaceTime consultation or a $75 in-person visit, and Cymonne will assess your hair and build a plan of action.</p>
     <div class="reveal delay-2">
-      <a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Consultation</a>
+      <a href="https://cymbolizebeauty.glossgenius.com/services" target="_blank" rel="noopener" class="sp-btn">Book a Consultation</a>
     </div>
   </div>
 </section>
