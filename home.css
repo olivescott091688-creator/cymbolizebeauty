@@ -151,7 +151,7 @@
 .qb-section {
   position: relative;
   min-height: 60vh;
-  background: url('roses-banner.jpg') center / cover no-repeat;
+  background: url('mesh-cta.jpg') center top / cover no-repeat;
   background-attachment: scroll;
   display: flex;
   align-items: center;
