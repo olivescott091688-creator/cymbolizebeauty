@@ -37,6 +37,14 @@
     {
       "src": "*.mp4",
       "use": "@vercel/static"
+    },
+    {
+      "src": "*.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.txt",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
