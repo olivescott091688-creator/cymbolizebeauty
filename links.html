@@ -311,6 +311,43 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ─── Section label ─── */
+    .lt-section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 14px 0 2px;
+      font-family: var(--f-body);
+      font-size: 0.64rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+    }
+
+    .lt-section-label::before,
+    .lt-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3));
+    }
+
+    .lt-section-label::after {
+      background: linear-gradient(90deg, rgba(201,169,110,0.3), transparent);
+    }
+
+    /* ─── Affiliate disclosure ─── */
+    .lt-disclosure {
+      font-family: var(--f-display);
+      font-style: italic;
+      font-size: 0.72rem;
+      color: rgba(250, 247, 242, 0.35);
+      text-align: center;
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
     .lt-logo-wrap { animation: fadeUp 0.6s ease both; }
     .lt-name      { animation: fadeUp 0.6s 0.1s ease both; }
     .lt-handle    { animation: fadeUp 0.6s 0.15s ease both; }
@@ -384,6 +421,38 @@
       <span class="lt-link-label">Visit Our Website</span>
       <span class="lt-link-arrow" aria-hidden="true">→</span>
     </a>
+
+    <!-- ─── Amazon Links ─── -->
+    <div class="lt-section-label" aria-hidden="true">Amazon</div>
+
+    <!-- Essentials Hair Care List -->
+    <a href="https://amzn.to/3UPLcck" target="_blank" rel="noopener sponsored" class="lt-link" aria-label="Cymbolizebeauty essentials hair care list on Amazon">
+      <span class="lt-icon" aria-hidden="true">
+        <!-- Shopping bag icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </span>
+      <span class="lt-link-label">Cymbolizebeauty Essentials Hair Care List</span>
+      <span class="lt-link-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- Mind, Body & Soul Essentials -->
+    <a href="https://amzn.to/4yiTCrb" target="_blank" rel="noopener sponsored" class="lt-link" aria-label="Cymonne's Mind, Body, and Soul essentials on Amazon">
+      <span class="lt-icon" aria-hidden="true">
+        <!-- Heart icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </span>
+      <span class="lt-link-label">Cymonne&rsquo;s Mind, Body &amp; Soul Essentials</span>
+      <span class="lt-link-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- Affiliate disclosure -->
+    <p class="lt-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
 
   </nav>
 
